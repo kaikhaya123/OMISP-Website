@@ -114,7 +114,7 @@ const Hero = () => {
         }
       >
         <video
-          src="/Videos/15433123_3840_2160_30fps.mp4"
+          src="/Videos/3247939-uhd_3840_2160_25fps.mp4"
           className="mx-auto rounded-2xl object-cover h-full object-left-top"
           autoPlay
           loop
