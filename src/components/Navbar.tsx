@@ -41,12 +41,12 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-background fixed w-full z-20 top-0 start-0 border-b border-border">
+    <nav className="bg-background/80 backdrop-blur-md fixed w-full z-20 top-0 start-0 border-b border-border/50">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center space-x-3">
-          <img src="/logo/omisp-logo.png" className="h-7" alt="OMISP Logo" />
-          <span className="self-center text-xl text-foreground font-semibold whitespace-nowrap">
+        <Link to="/" className="flex items-center space-x-2">
+          <img src="/logo/Omisp.png" className="h-14 w-auto object-contain mt-1" alt="OMISP Logo" />
+          <span className="text-xl md:text-2xl text-foreground font-bold whitespace-nowrap leading-none">
             OMISP
           </span>
         </Link>

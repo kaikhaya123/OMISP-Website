@@ -1,11 +1,9 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { Play } from "lucide-react";
 import { Link } from "react-router-dom";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
-import Lottie from "lottie-react";
-import creatingAppAnimation from "../../public/Lottie/Creating Application.json";
 
 const Hero = () => {
   const [titleNumber, setTitleNumber] = useState(0);
@@ -27,67 +25,71 @@ const Hero = () => {
 
   return (
     <>
-      {/* Full Screen Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white">
+      {/* Full Screen Hero Section with Background Image */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden -mt-20 pt-20">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 -top-20 bottom-0 z-0"
+          style={{
+            backgroundImage: 'url("https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&auto=format&fit=crop&q=80")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
+        />
+        
+        {/* Overlay for better text readability */}
+        <div className="absolute inset-0 -top-20 bottom-0 bg-black/40 z-0" />
+        
         {/* Content Container */}
-        <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10 py-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center max-w-7xl mx-auto">
-            {/* Left Column - Content */}
-            <div className="flex gap-4 md:gap-5 items-start flex-col">
+        <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10 py-12">
+          <div className="flex flex-col items-center gap-8 md:gap-12 max-w-7xl mx-auto">
+            
+            {/* Headline Section - Centered */}
+            <div className="flex gap-4 md:gap-6 items-center flex-col text-center w-full">
+              {/* Animated Title */}
+              <div className="flex gap-3 md:gap-4 flex-col items-center w-full">
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center font-regular leading-[1.1]">
+                  <span className="text-white">Build something</span>
+                  <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
+                    &nbsp;
+                    {titles.map((title, index) => (
+                      <motion.span
+                        key={index}
+                        className="absolute font-semibold text-primary"
+                        initial={{ opacity: 0, y: "-100" }}
+                        transition={{ type: "spring", stiffness: 50 }}
+                        animate={
+                          titleNumber === index
+                            ? {
+                                y: 0,
+                                opacity: 1,
+                              }
+                            : {
+                                y: titleNumber > index ? -150 : 150,
+                                opacity: 0,
+                              }
+                        }
+                      >
+                        {title}
+                      </motion.span>
+                    ))}
+                  </span>
+                </h1>
 
-          {/* Animated Title */}
-          <div className="flex gap-3 md:gap-4 flex-col">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl tracking-tighter text-left font-regular leading-[1.1]">
-              <span className="text-foreground">Build something</span>
-              <span className="relative flex w-full justify-start overflow-hidden text-left md:pb-4 md:pt-1">
-                &nbsp;
-                {titles.map((title, index) => (
-                  <motion.span
-                    key={index}
-                    className="absolute font-semibold text-primary"
-                    initial={{ opacity: 0, y: "-100" }}
-                    transition={{ type: "spring", stiffness: 50 }}
-                    animate={
-                      titleNumber === index
-                        ? {
-                            y: 0,
-                            opacity: 1,
-                          }
-                        : {
-                            y: titleNumber > index ? -150 : 150,
-                            opacity: 0,
-                          }
-                    }
-                  >
-                    {title}
-                  </motion.span>
-                ))}
-              </span>
-            </h1>
+                <p className="text-xs md:text-sm lg:text-base leading-relaxed text-white/90 max-w-2xl text-center mt-2" style={{ fontFamily: 'Lora, serif' }}>
+                  Stop guessing and start winning. OMISP transforms your raw potential into AI-validated credibility that top-tier VCs can't ignore.
+                </p>
+              </div>
 
-            <p className="text-sm text-black-900 md:text-base lg:text-lg leading-relaxed text-foreground/80 max-w-xl text-left mt-2" style={{ fontFamily: 'Lora, serif' }}>
-              Stop guessing and start winning. OMISP transforms your raw potential into AI-validated credibility that top-tier VCs can't ignore.
-            </p>
-          </div>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-start mt-2">
-            <Link to="/signup">
-              <Button size="lg" className="gap-2 shadow-lg shadow-primary/25 w-full sm:w-auto" style={{ fontFamily: 'Tanker, sans-serif' }}>
-                Start Building Your Score
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </Link>
-          </div>
-        </div>
-
-            {/* Right Column - Lottie Animation */}
-            <div className="flex items-center justify-center">
-              <Lottie 
-                animationData={creatingAppAnimation} 
-                loop={true}
-                className="w-full max-w-lg"
-              />
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mt-2">
+                <Link to="/signup">
+                  <Button size="default" className="shadow-lg shadow-primary/25 w-full sm:w-auto" style={{ fontFamily: 'Tanker, sans-serif' }}>
+                    Start Building Your Score
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -111,11 +113,13 @@ const Hero = () => {
           </>
         }
       >
-        <img
-          src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1400&auto=format&fit=crop&q=80"
-          alt="OMISP Dashboard"
+        <video
+          src="/Videos/15433123_3840_2160_30fps.mp4"
           className="mx-auto rounded-2xl object-cover h-full object-left-top"
-          draggable={false}
+          autoPlay
+          loop
+          muted
+          playsInline
         />
       </ContainerScroll>
     </section>
