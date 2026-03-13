@@ -5,7 +5,7 @@ import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { motion } from "framer-motion";
 import { useEffect, useMemo, useState } from "react";
 import Lottie from "lottie-react";
-import creatingAppAnimation from "/public/Lottie/Creating Application.json";
+import creatingAppAnimation from "../../public/Lottie/Creating Application.json";
 
 const Hero = () => {
   const [titleNumber, setTitleNumber] = useState(0);

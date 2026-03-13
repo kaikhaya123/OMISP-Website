@@ -2,12 +2,12 @@ import { TrendingUp, Gamepad2, MessageSquare, Users, Target, Building2 } from "l
 import { BentoCard, BentoGrid } from "@/components/ui/bento-grid";
 import { Badge } from "@/components/ui/badge";
 import Lottie from "lottie-react";
-import femaleStudentAnimation from "/public/Lottie/Female Student.json";
-import techAssistantAnimation from "/public/Lottie/Tech Assistant.json";
-import racesAnimation from "/public/Lottie/Races.json";
-import videoMessageAnimation from "/public/Lottie/Video Message.json";
-import digitalPortalAnimation from "/public/Lottie/Digital Portal.json";
-import onlineBankingAnimation from "/public/Lottie/Online Banking.json";
+import femaleStudentAnimation from "../../public/Lottie/Female Student.json";
+import techAssistantAnimation from "../../public/Lottie/Tech Assistant.json";
+import racesAnimation from "../../public/Lottie/Races.json";
+import videoMessageAnimation from "../../public/Lottie/Video Message.json";
+import digitalPortalAnimation from "../../public/Lottie/Digital Portal.json";
+import onlineBankingAnimation from "../../public/Lottie/Online Banking.json";
 
 // Custom Lottie Icon for Ideaverse
 const IdeaverseIcon = ({ className }: { className?: string }) => (

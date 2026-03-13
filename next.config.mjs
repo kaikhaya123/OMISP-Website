@@ -1,11 +1,17 @@
 import path from "path";
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
   pageExtensions: ["page.tsx", "page.ts", "page.jsx", "page.js"],
-  webpack(config) {
+  outputFileTracingRoot: path.join(__dirname, './'),
+  webpack(config, { isServer }) {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@": path.resolve(process.cwd(), "src"),

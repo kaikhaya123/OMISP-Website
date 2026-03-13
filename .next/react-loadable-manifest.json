@@ -1,20 +1,22 @@
 {
-  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
-    "id": "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_app",
+  "node_modules\\next\\dist\\client\\index.js -> ../pages/_app": {
+    "id": 1806,
     "files": [
-      "static/chunks/_pages-dir-browser_node_modules_next_dist_pages__app_js.js"
+      "static/chunks/806.6f077ef26b008492.js"
     ]
   },
-  "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
-    "id": "..\\node_modules\\next\\dist\\client\\index.js -> ../pages/_error",
+  "node_modules\\next\\dist\\client\\index.js -> ../pages/_error": {
+    "id": 8123,
     "files": [
-      "static/chunks/_pages-dir-browser_node_modules_next_dist_pages__error_js.js"
+      "static/chunks/123.0a5f1f77ff6dfc3b.js"
     ]
   },
-  "pages\\index.page.tsx -> ./Index": {
-    "id": "pages\\index.page.tsx -> ./Index",
+  "src\\pages\\index.page.tsx -> ./Index": {
+    "id": 4154,
     "files": [
-      "static/chunks/_pages-dir-browser_src_pages_Index_tsx.js"
+      "static/chunks/8e095c31.dfb7401daa368a17.js",
+      "static/chunks/768.3881a4ef394a9546.js",
+      "static/chunks/154.c2631faaa652bb70.js"
     ]
   }
 }
