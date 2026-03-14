@@ -188,12 +188,11 @@ export default function InvestorFounderList() {
       // Upsert view record for VC's own tracking
       await (supabase.from("investor_views") as any).upsert({ investor_id: user.id, founder_id: founderId }, { onConflict: "investor_id,founder_id" });
       
-      // Also track for founder's VC interest stats
-      await supabase.from("founder_profile_views").insert({ 
-        vc_id: user.id, 
-        founder_id: founderId,
-        source: 'discovery'
-      });
+      // Also track for founder's VC interest stats (use same table)
+      await (supabase.from("investor_views") as any).upsert({ 
+        investor_id: user.id, 
+        founder_id: founderId
+      }, { onConflict: "investor_id,founder_id" });
       
       setViewedIds(prev => new Set([...prev, founderId]));
       setViewCount(newCount);
