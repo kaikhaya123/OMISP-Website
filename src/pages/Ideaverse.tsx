@@ -228,6 +228,29 @@ const Ideaverse = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      
+      <header className="border-b bg-white shadow-sm">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <h1 className="text-2xl font-bold text-primary">Ideaverse</h1>
+              <p className="text-muted-foreground">Connect, collaborate, and create together</p>
+            </div>
+            <Button onClick={() => setIsCreateOpen(true)} className="w-fit">
+              <Plus className="w-4 h-4 mr-2" />
+              Create Post
+            </Button>
+          </div>
+          
+          <Dialog open={isCreateOpen} onOpenChange={setIsCreateOpen}>
+            <DialogContent className="sm:max-w-md">
+              <DialogHeader>
+                <DialogTitle>Create New Post</DialogTitle>
+                <DialogDescription>Share your idea with the founding community</DialogDescription>
+              </DialogHeader>
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  <Label>Type</Label>
                   <Select value={newPost.type} onValueChange={(v) => setNewPost({ ...newPost, type: v as Post["type"] })}>
                     <SelectTrigger>
                       <SelectValue />
