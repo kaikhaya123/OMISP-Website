@@ -94,7 +94,7 @@ export function Header() {
 			>
 				<Link to="/" className="flex items-center gap-2">
 					<img src="/logo/Omisp.png" alt="OMISP" className="h-14 w-auto object-contain mt-1" />
-				<span className={cn("font-tanker font-bold text-xl md:text-2xl leading-none", open ? "text-white" : "text-black")}>OMISP</span>
+				<span className={cn("font-tanker font-bold text-xl md:text-2xl leading-none", scrolled ? "text-black" : "text-white")}>OMISP</span>
 			</Link>
 
 			{/* Desktop Navigation Links */}
@@ -103,7 +103,7 @@ export function Header() {
 					<Link
 						key={link.label}
 						to={link.href}
-					className="font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary text-black"
+					className={cn("font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary", scrolled ? "text-black" : "text-white")}
 				>
 					{link.label}
 				</Link>
@@ -113,7 +113,7 @@ export function Header() {
 				<div className="relative" ref={userMenuRef}>
 					<button
 						onClick={() => setUserMenuOpen(!userMenuOpen)}
-						className="flex items-center gap-2 font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary text-black"
+						className={cn("flex items-center gap-2 font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary", scrolled ? "text-black" : "text-white")}
 					>
 						<User className="w-4 h-4" />
 					<span>{user.email?.split('@')[0] || 'User'}</span>
@@ -149,7 +149,7 @@ export function Header() {
 							to="/login"
 							className={cn(
 								"font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary",
-								scrolled ? "text-black" : "text-black"
+								scrolled ? "text-black" : "text-white"
 							)}
 						>
 							Sign In
@@ -164,7 +164,7 @@ export function Header() {
 			</div>
 
 			{/* Mobile Menu Toggle Button */}
-			<Button size="icon" variant="outline" onClick={() => setOpen(!open)} className={cn("md:hidden", open ? "border-white text-white hover:bg-white/10" : scrolled ? "" : "border-black text-black hover:bg-black/10")}>
+			<Button size="icon" variant="outline" onClick={() => setOpen(!open)} className={cn("md:hidden", open ? "border-white text-white hover:bg-white/10" : scrolled ? "border-black text-black hover:bg-black/10" : "border-white text-white hover:bg-white/10")}>
 					<MenuToggleIcon open={open} className="size-5" duration={300} />
 				</Button>
 			</nav>
