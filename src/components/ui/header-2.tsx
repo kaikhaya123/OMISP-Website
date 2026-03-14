@@ -166,9 +166,15 @@ export function Header() {
 			</div>
 
 			{/* Mobile Menu Toggle Button */}
-			<Button size="icon" variant="outline" onClick={() => setOpen(!open)} className={cn("md:hidden", open ? "border-white text-white hover:bg-white/10" : scrolled ? "border-black text-black hover:bg-black/10" : "border-black text-black hover:bg-black/10")}>
-					<MenuToggleIcon open={open} className="size-5" duration={300} stroke="black" />
-				</Button>
+			<Button 
+				size="icon" 
+				variant="outline" 
+				onClick={() => setOpen(!open)} 
+				className={cn("md:hidden", open ? "border-white text-white hover:bg-white/10" : scrolled ? "border-black text-black hover:bg-black/10" : "border-black text-black hover:bg-black/10")}
+				style={scrolled && !open ? { backgroundColor: '#FFF8DC' } : undefined}
+			>
+				<MenuToggleIcon open={open} className="size-5" duration={300} stroke={scrolled ? "black" : "white"} />
+			</Button>
 			</nav>
 		</header>
 

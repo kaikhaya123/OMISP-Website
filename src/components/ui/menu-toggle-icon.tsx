@@ -11,7 +11,7 @@ export function MenuToggleIcon({
 	open,
 	className,
 	fill = 'none',
-	stroke = 'currentColor',
+	stroke = 'white',
 	strokeWidth = 2.5,
 	strokeLinecap = 'round',
 	strokeLinejoin = 'round',
