@@ -76,13 +76,14 @@ export function Header() {
 		<>
 			<header
 				className={cn(
-					'sticky top-0 z-50 mx-auto w-full max-w-7xl border-b border-transparent md:rounded-md md:border md:transition-all md:ease-out',
+					'sticky top-0 z-50 mx-auto w-full max-w-7xl border-b border-transparent md:rounded-md md:border transition-all ease-out',
 					{
-						'border-white/20 md:top-4 md:max-w-6xl md:shadow-lg bg-white/95 backdrop-blur-md':
+						'border-white/20 top-2 md:top-4 max-w-6xl shadow-lg backdrop-blur-md rounded-md':
 							scrolled && !open,
 						'max-md:hidden': open,
 					},
 				)}
+				style={scrolled && !open ? { backgroundColor: '#FFF8DC' } : undefined}
 			>
 			<nav
 				className={cn(
@@ -98,7 +99,7 @@ export function Header() {
 						alt="OMISP" 
 						className={cn("h-14 w-auto object-contain mt-1 transition-all", scrolled ? "" : "brightness-0 invert")} 
 					/>
-				<span className={cn("font-tanker font-bold text-xl md:text-2xl leading-none", scrolled ? "text-black" : "text-white")}>OMISP</span>
+				<span className={cn("font-tanker font-bold text-xl md:text-2xl leading-none", scrolled ? "text-black" : "text-black")}>OMISP</span>
 			</Link>
 
 			{/* Desktop Navigation Links */}
@@ -107,7 +108,7 @@ export function Header() {
 					<Link
 						key={link.label}
 						to={link.href}
-					className={cn("font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary", scrolled ? "text-black" : "text-white")}
+					className={cn("font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary", scrolled ? "text-black" : "text-black")}
 				>
 					{link.label}
 				</Link>
@@ -117,7 +118,7 @@ export function Header() {
 				<div className="relative" ref={userMenuRef}>
 					<button
 						onClick={() => setUserMenuOpen(!userMenuOpen)}
-						className={cn("flex items-center gap-2 font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary", scrolled ? "text-black" : "text-white")}
+						className={cn("flex items-center gap-2 font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary", scrolled ? "text-black" : "text-black")}
 					>
 						<User className="w-4 h-4" />
 					<span>{user.email?.split('@')[0] || 'User'}</span>
@@ -151,15 +152,12 @@ export function Header() {
 					<>
 						<Link
 							to="/login"
-							className={cn(
-								"font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary",
-								scrolled ? "text-black" : "text-white"
-							)}
+							className={cn("font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary", scrolled ? "text-black" : "text-black")}
 						>
 							Sign In
 						</Link>
 						<Link to="/signup">
-							<Button size="sm" className="font-tanker">
+							<Button size="sm" className="font-tanker" style={{ backgroundColor: '#FF8225', color: 'black' }}>
 								Get Started
 							</Button>
 						</Link>
@@ -168,8 +166,8 @@ export function Header() {
 			</div>
 
 			{/* Mobile Menu Toggle Button */}
-			<Button size="icon" variant="outline" onClick={() => setOpen(!open)} className={cn("md:hidden", open ? "border-white text-white hover:bg-white/10" : scrolled ? "border-black text-black hover:bg-black/10" : "border-white text-white hover:bg-white/10")}>
-					<MenuToggleIcon open={open} className="size-5" duration={300} />
+			<Button size="icon" variant="outline" onClick={() => setOpen(!open)} className={cn("md:hidden", open ? "border-white text-white hover:bg-white/10" : scrolled ? "border-black text-black hover:bg-black/10" : "border-black text-black hover:bg-black/10")}>
+					<MenuToggleIcon open={open} className="size-5" duration={300} stroke="black" />
 				</Button>
 			</nav>
 		</header>
@@ -213,7 +211,7 @@ export function Header() {
 							onClick={() => setOpen(false)}
 							className="w-11 h-11 md:w-12 md:h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all border border-white/30 hover:border-white/50 group"
 						>
-							<span className="text-white text-2xl md:text-3xl font-light group-hover:scale-110 transition-transform">×</span>
+							<span className="text-black text-2xl md:text-3xl font-light group-hover:scale-110 transition-transform">×</span>
 						</button>
 					</div>
 

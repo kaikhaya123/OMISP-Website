@@ -29,7 +29,7 @@ const differentiators = [
 
 const ValidationSection = () => {
   return (
-    <section className="py-24 bg-black text-white relative overflow-hidden">
+    <section className="py-24 bg-[#FFF8DC] text-white relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,195,0,0.18),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.06),transparent_30%)]" />
       <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
         <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
@@ -38,7 +38,7 @@ const ValidationSection = () => {
             <h2 className="text-4xl md:text-5xl font-bold mb-4 font-tanker">
               Credibility is earned, reviewed, and made visible
             </h2>
-            <p className="text-white/75 text-lg leading-relaxed mb-6">
+            <p className="text-black text-lg leading-relaxed mb-6">
               OMISP separates itself from founder communities and pitch tools by validating meaningful progress.
               That gives investors cleaner signal and gives founders a fairer path to visibility.
             </p>
@@ -46,15 +46,15 @@ const ValidationSection = () => {
             <div className="grid sm:grid-cols-3 gap-3 mb-6">
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="text-3xl font-bold text-primary mb-1">3-step</div>
-                <p className="text-sm text-white/70">submission to approval workflow</p>
+                <p className="text-sm text-black">submission to approval workflow</p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="text-3xl font-bold text-primary mb-1">70+</div>
-                <p className="text-sm text-white/70">score unlocks VC discovery</p>
+                <p className="text-sm text-black">score unlocks VC discovery</p>
               </div>
               <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
                 <div className="text-3xl font-bold text-primary mb-1">Real</div>
-                <p className="text-sm text-white/70">proof drives ranking, not claims</p>
+                <p className="text-sm text-black">proof drives ranking, not claims</p>
               </div>
             </div>
 
@@ -62,7 +62,7 @@ const ValidationSection = () => {
               {differentiators.map((item) => (
                 <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
                   <Shield className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <p className="text-sm text-white/80">{item}</p>
+                  <p className="text-sm text-black">{item}</p>
                 </div>
               ))}
             </div>
@@ -85,7 +85,7 @@ const ValidationSection = () => {
                   <div>
                     <div className="text-xs uppercase tracking-[0.25em] text-primary/80 mb-2">Step 0{index + 1}</div>
                     <h3 className="text-2xl font-semibold mb-2">{step.title}</h3>
-                    <p className="text-white/75 leading-relaxed">{step.copy}</p>
+                    <p className="text-black/75 leading-relaxed">{step.copy}</p>
                   </div>
                 </div>
               </div>

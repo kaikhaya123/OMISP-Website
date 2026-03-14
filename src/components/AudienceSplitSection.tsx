@@ -52,7 +52,7 @@ const investorItems = [
 
 const AudienceSplitSection = () => {
   return (
-    <section className="py-24 bg-[#FFC300]">
+    <section className="py-24 bg-[#FF8225]">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <Badge className="mb-4 bg-black text-white border-black">Two-Sided Platform</Badge>

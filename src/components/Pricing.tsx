@@ -121,7 +121,7 @@ const Pricing = () => {
   }));
 
   return (
-    <section className="py-16 md:py-20 lg:py-24 bg-[#FFC300] relative min-h-screen">
+    <section className="py-16 md:py-20 lg:py-24 bg-[#FF8225] relative min-h-screen">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3 md:mb-4 font-tanker px-4">

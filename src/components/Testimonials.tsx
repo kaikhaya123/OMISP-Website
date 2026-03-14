@@ -2,7 +2,7 @@ import { StaggerTestimonials } from "./ui/stagger-testimonials";
 
 const Testimonials = () => {
   return (
-    <section className="bg-[#FFFFFF] py-20">
+    <section className="bg-[#FFF8DC] py-20">
       <div className="container mx-auto px-4 md:px-6">
         {/* Header */}
         <div className="text-center mb-16">

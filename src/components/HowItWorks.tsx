@@ -10,7 +10,7 @@ const steps = [
     title: "Build Your Profile",
     description: "Create your founder profile and start using our AI-powered tools to validate your ideas and track progress.",
     image: "/Images/Business Handshake Scene.png",
-    color: '#FFC300',
+    color: '#F8EDED',
   },
   {
     number: "02",
@@ -23,8 +23,8 @@ const steps = [
     number: "03",
     title: "Track Progress",
     description: "Log real milestones like revenue, team size, and funding to boost your OMISP score and build verified credibility.",
-    image: "/Images/Data Analysis Discussion.png",
-    color: '#FFC300',
+    image: "/Images/pexels-alphatradezone-5833272.jpg",
+    color: '#F8EDED',
   },
   {
     number: "04",
@@ -44,23 +44,23 @@ const HowItWorks = () => {
 
   return (
     <ReactLenis root>
-      <main ref={container} className="bg-white">
+      <main ref={container} className="bg-[#FF8225]">
         {/* Header Section */}
-        <section className="text-foreground h-[70vh] w-full bg-white grid place-content-center relative overflow-hidden">
+        <section className="text-foreground h-[70vh] w-full bg-[#FF8225] grid place-content-center relative overflow-hidden">
           <div className="absolute bottom-0 left-0 right-0 top-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:54px_54px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
 
           <div className="relative z-10 text-center px-8">
             <h2 className="text-black 2xl:text-7xl text-5xl font-bold tracking-tight leading-[120%] mb-4 font-tanker">
               How OMISP Works
             </h2>
-            <p className="text-black text-lg  max-w-2xl mx-auto font-tanker">
-              A simple path from aspiring founder to funded startup. Scroll down! 👇
+            <p className="text-white text-lg  max-w-2xl mx-auto font-tanker">
+              A simple path from aspiring founder to funded startup.
             </p>
           </div>
         </section>
 
         {/* Stacking Cards Section */}
-        <section className="text-foreground w-full bg-white pb-20">
+        <section className="text-foreground w-full bg-[#FF8225] pb-20">
           {steps.map((step, i) => {
             const targetScale = 1 - (steps.length - i) * 0.05;
             return (
@@ -130,13 +130,13 @@ const Card: React.FC<CardProps> = ({
         className="flex flex-col relative -top-[25%] h-[450px] w-[90%] md:w-[80%] lg:w-[70%] rounded-2xl p-4 sm:p-6 lg:p-10 origin-top shadow-2xl"
       >
         <div className="flex items-center gap-4 mb-6">
-          <div className="text-6xl font-bold text-white/30 font-tanker">{number}</div>
-          <h3 className="text-2xl md:text-3xl font-bold text-white font-tanker">{title}</h3>
+          <div className={`text-6xl font-bold font-tanker ${color === '#F8EDED' ? 'text-black/30' : 'text-white/30'}`}>{number}</div>
+          <h3 className={`text-2xl md:text-3xl font-bold font-tanker ${color === '#F8EDED' ? 'text-black' : 'text-white'}`}>{title}</h3>
         </div>
         
         <div className="flex flex-col lg:flex-row h-full gap-6 lg:gap-10">
           <div className="w-full lg:w-[40%] flex flex-col justify-center">
-            <p className="text-sm md:text-base text-white leading-relaxed font-tanker">
+            <p className={`text-sm md:text-base leading-relaxed font-tanker ${color === '#F8EDED' ? 'text-black' : 'text-white'}`}>
               {description}
             </p>
           </div>

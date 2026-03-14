@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from "react";
-import { Menu, User, LayoutDashboard, Settings, DollarSign, LogOut } from "lucide-react";
+import { User, LayoutDashboard, Settings, DollarSign, LogOut } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { useUserRole } from "@/hooks/useUserRole";
+import { MenuToggleIcon } from "@/components/ui/menu-toggle-icon";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -46,7 +47,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <img src="/logo/Omisp.png" className="h-10 md:h-14 w-auto object-contain mt-1" alt="OMISP Logo" />
-          <span className="font-tanker font-bold text-lg md:text-xl lg:text-2xl text-foreground whitespace-nowrap leading-none">
+          <span className="font-tanker font-bold text-lg md:text-xl lg:text-2xl whitespace-nowrap leading-none" style={{ color: 'black' }}>
             OMISP
           </span>
         </Link>
@@ -115,7 +116,8 @@ const Navbar = () => {
           ) : (
             <Link
               to="/login"
-              className="text-xs md:text-sm font-medium text-primary hover:text-primary/80 transition-colors px-3 md:px-4 py-2 rounded-lg hover:bg-muted"
+              className="text-xs md:text-sm font-medium hover:text-primary/80 transition-colors px-3 md:px-4 py-2 rounded-lg hover:bg-muted"
+              style={{ color: 'black' }}
             >
               Log in
             </Link>
@@ -124,13 +126,19 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="inline-flex items-center p-2 w-9 h-9 md:w-10 md:h-10 justify-center text-sm text-muted-foreground rounded-lg md:hidden hover:bg-muted focus:outline-none focus:ring-2 focus:ring-ring"
+            className="inline-flex items-center p-2 w-9 h-9 md:w-10 md:h-10 justify-center rounded-lg md:hidden hover:bg-muted focus:outline-none focus:ring-2 focus:ring-ring bg-black shadow-md border border-gray-800"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-controls="navbar-user"
             aria-expanded={mobileMenuOpen}
           >
-            <span className="sr-only">Open main menu</span>
-            <Menu className="w-5 h-5 md:w-6 md:h-6" />
+            <span className="sr-only">Toggle navigation menu</span>
+            <MenuToggleIcon 
+              open={mobileMenuOpen}
+              className="w-5 h-5 md:w-6 md:h-6 text-white"
+              duration={300}
+              stroke="white"
+              strokeWidth={2.5}
+            />
           </button>
         </div>
 
@@ -148,9 +156,10 @@ const Navbar = () => {
                   to={link.to}
                   className={`block py-2 px-3 rounded transition-colors text-sm md:text-base ${
                     index === 0
-                      ? "text-primary font-semibold md:bg-transparent"
-                      : "text-foreground hover:bg-muted md:hover:bg-transparent md:hover:text-primary"
+                      ? "font-semibold md:bg-transparent"
+                      : "hover:bg-muted md:hover:bg-transparent md:hover:text-primary"
                   }`}
+                  style={{ color: 'black' }}
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}

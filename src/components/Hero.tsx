@@ -57,6 +57,7 @@ const Hero = () => {
                       <motion.span
                         key={index}
                         className="absolute font-semibold text-primary"
+                        style={{ color: '#FF8225' }}
                         initial={{ opacity: 0, y: "-100" }}
                         transition={{ type: "spring", stiffness: 50 }}
                         animate={
@@ -85,7 +86,7 @@ const Hero = () => {
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row gap-3 justify-center mt-2 w-full max-w-md">
                 <Link to="/signup" className="w-full sm:w-auto">
-                  <Button size="default" className="shadow-lg shadow-primary/25 w-full sm:w-auto px-6 py-3" style={{ fontFamily: 'Tanker, sans-serif' }}>
+                  <Button size="default" className="shadow-lg shadow-primary/25 w-full sm:w-auto px-6 py-3" style={{ fontFamily: 'Tanker, sans-serif', backgroundColor: '#FF8225', color: 'black' }}>
                     Start Building Your Score
                   </Button>
                 </Link>
@@ -104,7 +105,7 @@ const Hero = () => {
               Your AI-Powered
               <br className="hidden sm:block" />
               <span className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mt-1 leading-none bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent block">
-                Credibility Engine
+                <span className="text-[#FF8225]"> Credibility Engine</span>
               </span>
             </h2>
             <p className="text-black text-base md:text-lg lg:text-xl max-w-2xl mx-auto px-4 text-center">
