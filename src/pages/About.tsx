@@ -48,10 +48,10 @@ const AboutPage = () => {
                 transition={{ duration: 0.6 }}
                 className="space-y-6"
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-tanker font-bold text-foreground leading-tight">
+                <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-tanker font-bold leading-tight">
                   The Credit Score for <span className="font-tanker text-primary">Founders</span>
                 </h1>
-                <p className="text-lg text-muted-foreground leading-relaxed max-w-xl">
+                <p className="text-lg text-black leading-relaxed max-w-xl">
                   For too long, venture capital has relied on warm introductions and prestigious 
                   backgrounds. We believe that great founders can come from anywhere. OMISP 
                   provides a standardized way to build, track, and prove your credibility.
@@ -106,10 +106,10 @@ const AboutPage = () => {
               className="text-center mb-16"
             >
               <p className="text-sm font-tanker text-primary mb-2 uppercase tracking-wide">OMISP Platform</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-tanker font-bold text-foreground mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-tanker font-bold text-black mb-4">
                 Infrastructure for the next<br />generation of founders
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-black max-w-3xl mx-auto leading-relaxed">
                 OMISP combines AI-powered strategic training with real-world milestone tracking, 
                 giving VCs a data-driven way to discover high-potential founders and founders 
                 a clear path to becoming investor-ready. Build credibility, connect with capital, 
@@ -131,8 +131,8 @@ const AboutPage = () => {
                   <div className="flex items-center justify-center mx-auto">
                     <img src={feature.icon} alt={feature.title} className="w-16 h-16" />
                   </div>
-                  <h3 className="text-xl font-tanker font-semibold text-foreground">{feature.title}</h3>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-tanker font-semibold text-black">{feature.title}</h3>
+                  <p className="text-sm text-black leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -150,11 +150,11 @@ const AboutPage = () => {
               className="max-w-4xl mx-auto"
             >
               <p className="text-sm font-tanker text-primary mb-2 uppercase tracking-wide">Our Story</p>
-              <h2 className="text-3xl md:text-4xl font-tanker font-bold text-foreground mb-6">
+              <h2 className="text-3xl md:text-4xl font-tanker font-bold text-black mb-6">
                 How OMISP came about
               </h2>
               
-              <div className="space-y-4 text-muted-foreground mb-12 leading-relaxed">
+              <div className="space-y-4 text-black mb-12 leading-relaxed">
                 <p>
                   The venture capital industry has long operated on connections and pedigree. 
                   If you didn't go to the right school or know the right people, your chances 
@@ -202,8 +202,8 @@ const AboutPage = () => {
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     />
                   </figure>
-                  <h3 className="text-xl font-tanker font-bold text-foreground mt-4">Empowering Founders</h3>
-                  <p className="text-sm text-muted-foreground">Building credibility through verified milestones</p>
+                  <h3 className="text-xl font-tanker font-bold text-black mt-4">Empowering Founders</h3>
+                  <p className="text-sm text-black">Building credibility through verified milestones</p>
                 </motion.div>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -231,8 +231,8 @@ const AboutPage = () => {
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                     />
                   </figure>
-                  <h3 className="text-xl font-tanker font-bold text-foreground mt-4">Connecting Capital</h3>
-                  <p className="text-sm text-muted-foreground">Data-driven discovery for venture capitalists</p>
+                  <h3 className="text-xl font-tanker font-bold text-black mt-4">Connecting Capital</h3>
+                  <p className="text-sm text-black">Data-driven discovery for venture capitalists</p>
                 </motion.div>
               </div>
             </motion.div>
