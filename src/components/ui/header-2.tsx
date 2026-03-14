@@ -93,7 +93,11 @@ export function Header() {
 				)}
 			>
 				<Link to="/" className="flex items-center gap-2">
-					<img src="/logo/Omisp.png" alt="OMISP" className="h-14 w-auto object-contain mt-1" />
+					<img 
+						src="/logo/Omisp.png" 
+						alt="OMISP" 
+						className={cn("h-14 w-auto object-contain mt-1 transition-all", scrolled ? "" : "brightness-0 invert")} 
+					/>
 				<span className={cn("font-tanker font-bold text-xl md:text-2xl leading-none", scrolled ? "text-black" : "text-white")}>OMISP</span>
 			</Link>
 
