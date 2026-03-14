@@ -96,7 +96,7 @@ const AboutPage = () => {
         </section>
 
         {/* Platform Features Section */}
-        <section className="py-20 bg-background">
+        <section className="py-20 bg-black">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -106,10 +106,10 @@ const AboutPage = () => {
               className="text-center mb-16"
             >
               <p className="text-sm font-tanker text-primary mb-2 uppercase tracking-wide">OMISP Platform</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-tanker font-bold text-black mb-4">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-tanker font-bold text-white mb-4">
                 Infrastructure for the next<br />generation of founders
               </h2>
-              <p className="text-lg text-black max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-white max-w-3xl mx-auto leading-relaxed">
                 OMISP combines AI-powered strategic training with real-world milestone tracking, 
                 giving VCs a data-driven way to discover high-potential founders and founders 
                 a clear path to becoming investor-ready. Build credibility, connect with capital, 
@@ -131,8 +131,8 @@ const AboutPage = () => {
                   <div className="flex items-center justify-center mx-auto">
                     <img src={feature.icon} alt={feature.title} className="w-16 h-16" />
                   </div>
-                  <h3 className="text-xl font-tanker font-semibold text-black">{feature.title}</h3>
-                  <p className="text-sm text-black leading-relaxed">{feature.description}</p>
+                  <h3 className="text-xl font-tanker font-semibold text-white">{feature.title}</h3>
+                  <p className="text-sm text-white leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
