@@ -4,6 +4,10 @@ import { Header } from "@/components/ui/header-2";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import HowItWorks from "@/components/HowItWorks";
+import ScoreExplainer from "@/components/ScoreExplainer";
+import ValidationSection from "@/components/ValidationSection";
+import AudienceSplitSection from "@/components/AudienceSplitSection";
+import ProductProofSection from "@/components/ProductProofSection";
 import Pricing from "@/components/Pricing";
 import Testimonials from "@/components/Testimonials";
 import CTA from "@/components/CTA";
@@ -35,8 +39,12 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <Hero />
+      <ScoreExplainer />
       <Features />
       <HowItWorks />
+      <ValidationSection />
+      <AudienceSplitSection />
+      <ProductProofSection />
       <Pricing />
       <Testimonials />
       <CTA />

@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Skeleton } from "@/components/ui/skeleton";
+import AdminValidationQueue from "@/components/dashboard/AdminValidationQueue";
 import {
   Users, Building2, Trophy, Eye, TrendingUp, Sparkles,
   BarChart3, CheckCircle, Shield,
@@ -144,6 +145,11 @@ export default function AdminDashboard() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* Milestone Validation Queue */}
+        <div className="mb-8">
+          <AdminValidationQueue />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

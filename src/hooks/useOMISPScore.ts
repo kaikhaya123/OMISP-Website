@@ -23,6 +23,11 @@ export interface Milestone {
   type: string;
   value: string | null;
   created_at: string;
+  status?: 'pending' | 'approved' | 'rejected';
+  admin_notes?: string | null;
+  validated_at?: string | null;
+  validated_by?: string | null;
+  proof_url?: string | null;
 }
 
 export interface OMISPScores {

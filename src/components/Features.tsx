@@ -164,11 +164,11 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-20 bg-[#FFC300]">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
-            Everything You Need to <span className="text-white">Succeed</span>
+            Everything You Need to <span className="text-[#FFC300]">Succeed</span>
           </h2>
           <p className="text-lg text-black max-w-2xl mx-auto">
             Six powerful features designed to build your credibility, sharpen your skills, and connect you with investors. Each one directly impacts your 0-100 OMISP Score.

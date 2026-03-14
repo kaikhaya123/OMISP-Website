@@ -12,6 +12,7 @@ import RecentActivity from "@/components/dashboard/RecentActivity";
 import MilestoneLogging from "@/components/dashboard/MilestoneLogging";
 import ScoreHistory from "@/components/dashboard/ScoreHistory";
 import ScoreImprovement from "@/components/dashboard/ScoreImprovement";
+import VCInterestWidget from "@/components/dashboard/VCInterestWidget";
 import { useOMISPScore, getScoreInterpretation } from "@/hooks/useOMISPScore";
 import { Link } from "react-router-dom";
 
@@ -107,9 +108,10 @@ const Dashboard = () => {
                 <MilestoneTimeline />
               </div>
 
-              {/* Right Column - Activity */}
-              <div>
+              {/* Right Column - Activity & VC Interest */}
+              <div className="space-y-6">
                 <RecentActivity />
+                <VCInterestWidget />
               </div>
             </div>
           </TabsContent>
@@ -142,71 +144,12 @@ const Dashboard = () => {
           </TabsContent>
 
           <TabsContent value="vc-interest">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-              <div className="bg-card rounded-xl border border-border p-6">
-                <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                  <Eye className="w-4 h-4" />
-                  <span className="text-sm">Profile Views</span>
-                </div>
-                <p className="text-4xl font-bold text-foreground">{vcInterest.views}</p>
-                <p className="text-sm text-accent-foreground">+5 this week</p>
-              </div>
-              <div className="bg-card rounded-xl border border-border p-6">
-                <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                  <Target className="w-4 h-4" />
-                  <span className="text-sm">Watchlist Adds</span>
-                </div>
-                <p className="text-4xl font-bold text-foreground">{vcInterest.favorites}</p>
-                <p className="text-sm text-accent-foreground">+2 this week</p>
-              </div>
-              <div className="bg-card rounded-xl border border-border p-6">
-                <div className="flex items-center gap-2 text-muted-foreground mb-2">
-                  <TrendingUp className="w-4 h-4" />
-                  <span className="text-sm">Intro Requests</span>
-                </div>
-                <p className="text-4xl font-bold text-primary">{vcInterest.introRequests}</p>
-                <p className="text-sm text-primary">2 pending!</p>
-              </div>
-            </div>
-
-            <div className="bg-card rounded-xl border border-border p-6">
-              <div className="flex items-center justify-between mb-6">
-                <h3 className="font-semibold">Recent VC Activity</h3>
-                <Button variant="outline" size="sm" className="gap-2">
-                  <Download className="w-4 h-4" />
-                  Export Report
-                </Button>
-              </div>
-              
-              <div className="space-y-4">
-                {[
-                  { vc: "Sequoia Capital", action: "Requested intro", time: "2 hours ago", status: "pending" },
-                  { vc: "a16z", action: "Added to watchlist", time: "1 day ago", status: "complete" },
-                  { vc: "Founders Fund", action: "Viewed profile", time: "2 days ago", status: "complete" },
-                  { vc: "Benchmark", action: "Viewed profile", time: "3 days ago", status: "complete" },
-                  { vc: "Accel", action: "Requested intro", time: "5 days ago", status: "pending" },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-center justify-between p-3 rounded-lg bg-muted/50">
-                    <div className="flex items-center gap-3">
-                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                        <span className="text-primary font-semibold text-sm">{item.vc[0]}</span>
-                      </div>
-                      <div>
-                        <p className="font-medium">{item.vc}</p>
-                        <p className="text-sm text-muted-foreground">{item.action}</p>
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-xs text-muted-foreground">{item.time}</p>
-                      {item.status === "pending" && (
-                        <Badge variant="secondary" className="text-xs mt-1">
-                          Action Required
-                        </Badge>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
+            <div className="max-w-4xl">
+              <h2 className="text-2xl font-bold mb-4">VC Interest Dashboard</h2>
+              <p className="text-muted-foreground mb-6">
+                Track which VCs are viewing your profile, adding you to their watchlist, and requesting introductions.
+              </p>
+              <VCInterestWidget />
             </div>
           </TabsContent>
 
