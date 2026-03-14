@@ -51,7 +51,7 @@ const personas: Persona[] = [
     name: "The CFO",
     title: "Financial Strategist",
     icon: TrendingUp,
-    color: "bg-green-500",
+    color: "bg-accent",
     description: "Numbers-focused advisor. Ensures your unit economics work.",
     systemPrompt: "You are a seasoned CFO advisor. Think in terms of unit economics, LTV:CAC ratios, burn rate, and runway. Always reference the founder's ACTUAL financial metrics. Challenge their financial assumptions with real-world benchmarks.",
     greetingTemplate: (ctx) => {
@@ -66,7 +66,7 @@ const personas: Persona[] = [
     name: "The Visionary",
     title: "Big Picture Thinker",
     icon: Lightbulb,
-    color: "bg-purple-500",
+    color: "bg-accent",
     description: "Sees the 10-year view. Helps you dream bigger.",
     systemPrompt: "You are a visionary thinker who sees beyond the current product. Help founders think about platform potential, network effects, and market creation. Use their actual metrics to project future scenarios.",
     greetingTemplate: (ctx) => {
@@ -82,7 +82,7 @@ const personas: Persona[] = [
     name: "The CMO",
     title: "Growth Marketing Expert",
     icon: Target,
-    color: "bg-blue-500",
+    color: "bg-primary",
     description: "Discusses marketing, CAC/LTV, and scaling acquisition.",
     systemPrompt: "You are a battle-tested CMO who has scaled startups. Focus on customer acquisition, CAC optimization, channel strategy, and brand building. Use the founder's actual metrics to give specific marketing advice.",
     greetingTemplate: (ctx) => {
@@ -112,7 +112,7 @@ const personas: Persona[] = [
     name: "Omi",
     title: "Your AI Co-founder",
     icon: Brain,
-    color: "bg-gradient-to-br from-primary to-purple-600",
+    color: "bg-gradient-to-br from-primary to-accent",
     description: "Balanced advice. Your go-to thinking partner who knows everything about OMISP.",
     systemPrompt: "You are Omi, a wise AI co-founder. You combine the best traits of great startup mentors. You're an expert on the OMISP scoring system and can explain how to improve any dimension. Draw on startup frameworks, real company examples, and founder psychology.",
     greetingTemplate: (ctx) => {
@@ -277,7 +277,7 @@ const OmiChat = () => {
             <div>
               <h1 className="text-xl font-bold text-foreground flex items-center gap-2">
                 Omi Chat
-                <Badge className="bg-gradient-to-r from-primary to-purple-600 text-white border-0">
+                <Badge className="bg-gradient-to-r from-primary to-accent text-white border-0">
                   <Zap className="w-3 h-3 mr-1" />
                   Context-Aware AI
                 </Badge>

@@ -94,8 +94,8 @@ export function Header() {
 			>
 				<Link to="/" className="flex items-center gap-2">
 					<img src="/logo/Omisp.png" alt="OMISP" className="h-14 w-auto object-contain mt-1" />
-					<span className={cn("font-tanker font-bold text-xl md:text-2xl leading-none", open ? "text-white" : scrolled ? "text-foreground" : "text-black")}>OMISP</span>
-				</Link>
+				<span className={cn("font-tanker font-bold text-xl md:text-2xl leading-none", open ? "text-white" : "text-black")}>OMISP</span>
+			</Link>
 
 			{/* Desktop Navigation Links */}
 			<div className="hidden md:flex items-center gap-6 lg:gap-8">
@@ -103,29 +103,23 @@ export function Header() {
 					<Link
 						key={link.label}
 						to={link.href}
-						className={cn(
-							"font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary",
-							scrolled ? "text-foreground" : "text-black"
-						)}
+					className="font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary text-black"
+				>
+					{link.label}
+				</Link>
+			))}
+			
+			{user ? (
+				<div className="relative" ref={userMenuRef}>
+					<button
+						onClick={() => setUserMenuOpen(!userMenuOpen)}
+						className="flex items-center gap-2 font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary text-black"
 					>
-						{link.label}
-					</Link>
-				))}
+						<User className="w-4 h-4" />
+					<span>{user.email?.split('@')[0] || 'User'}</span>
+				</button>
 				
-				{user ? (
-					<div className="relative" ref={userMenuRef}>
-						<button
-							onClick={() => setUserMenuOpen(!userMenuOpen)}
-							className={cn(
-								"flex items-center gap-2 font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary",
-								scrolled ? "text-foreground" : "text-black"
-							)}
-						>
-							<User className="w-4 h-4" />
-							<span>{user.email?.split('@')[0] || 'User'}</span>
-						</button>
-						
-						{userMenuOpen && (
+				{userMenuOpen && (
 							<div className="absolute right-0 mt-2 w-56 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
 								<div className="px-4 py-2 border-b border-gray-200">
 									<p className="text-sm font-medium text-gray-900">{user.email?.split('@')[0]}</p>
@@ -155,7 +149,7 @@ export function Header() {
 							to="/login"
 							className={cn(
 								"font-tanker text-sm lg:text-base font-semibold transition-colors hover:text-primary",
-								scrolled ? "text-foreground" : "text-black"
+								scrolled ? "text-black" : "text-black"
 							)}
 						>
 							Sign In

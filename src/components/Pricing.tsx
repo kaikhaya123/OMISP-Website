@@ -121,13 +121,13 @@ const Pricing = () => {
   }));
 
   return (
-    <section className="py-20 bg-background relative min-h-screen">
+    <section className="py-20 bg-[#FFC300] relative min-h-screen">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-tanker">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 font-tanker">
             Choose Your Plan
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-tanker">
+          <p className="text-lg text-black max-w-2xl mx-auto font-tanker">
             Plans for founders building the future and VCs discovering them.
           </p>
         </div>

@@ -25,7 +25,7 @@ const MicrosoftBadge = ({ variant = "default", className = "" }: MicrosoftBadgeP
   }
 
   return (
-    <div className={`inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 ${className}`}>
+    <div className={`inline-flex items-center gap-3 px-4 py-2 rounded-lg bg-gradient-to-r from-primary/10 to-accent/10 border border-primary/20 ${className}`}>
       <img src={microsoftLogo.src} alt="Microsoft" className="w-6 h-6 object-contain" />
       <div className="text-left">
         <p className="text-xs font-semibold text-foreground">Microsoft for Startups</p>

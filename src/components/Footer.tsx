@@ -113,9 +113,9 @@ const Footer = () => {
       </div>
 
       {/* Bottom Section with Copyright */}
-      <div className="px-8 pb-6 pt-4 border-t border-gray-200 bg-white mx-5 rounded-xs">
+      <div className="px-8 pb-6 pt-4 border-t border-gray-800 bg-black mx-5 rounded-xs">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <p className="text-black text-sm">
+          <p className="text-white text-sm">
             © {new Date().getFullYear()} OMISP. All rights reserved.
           </p>
         </div>

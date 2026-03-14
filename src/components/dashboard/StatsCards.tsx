@@ -8,8 +8,8 @@ const stats = [
     change: "+12%",
     trend: "up",
     icon: Eye,
-    color: "text-blue-500",
-    bgColor: "bg-blue-500/10",
+    color: "text-primary",
+    bgColor: "bg-primary/10",
   },
   {
     label: "VC Interests",
@@ -36,7 +36,7 @@ const stats = [
     trend: "up",
     icon: TrendingUp,
     color: "text-green-500",
-    bgColor: "bg-green-500/10",
+    bgColor: "bg-primary/10",
   },
   {
     label: "AI Sessions",
@@ -44,8 +44,8 @@ const stats = [
     change: "5h total",
     trend: "neutral",
     icon: MessageSquare,
-    color: "text-purple-500",
-    bgColor: "bg-purple-500/10",
+    color: "text-accent",
+    bgColor: "bg-accent/10",
   },
   {
     label: "Days Active",

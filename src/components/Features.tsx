@@ -83,11 +83,12 @@ const features = [
     href: "/revenue-architect",
     cta: "Try it now",
     background: (
-      <div className="absolute inset-0 bg-gradient-to-br from-orange-100 to-orange-200 dark:from-orange-950/20 dark:to-orange-900/20" />
+      <div className="absolute inset-0 bg-white" />
     ),
     className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
     scoring: "Idea Viability (0-20)",
     scoringDetail: "+10 for model quality, +6 for strong TAM, +3 for competitive positioning",
+    descriptionColor: "black",
   },
   {
     Icon: MarketHeartbeatIcon,
@@ -96,11 +97,12 @@ const features = [
     href: "/build-a-biz",
     cta: "Try it now",
     background: (
-      <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-purple-200 dark:from-purple-950/20 dark:to-purple-900/20" />
+      <div className="absolute inset-0 bg-black" />
     ),
     className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
     scoring: "Execution Readiness (0-20)",
     scoringDetail: "+8 for game scores, +5 for decision speed, +6 for crisis management",
+    descriptionColor: "white",
   },
   {
     Icon: OmiChatIcon,
@@ -109,11 +111,12 @@ const features = [
     href: "/omi-chat",
     cta: "Try it now",
     background: (
-      <div className="absolute inset-0 bg-gradient-to-br from-teal-100 to-teal-200 dark:from-teal-950/20 dark:to-teal-900/20" />
+      <div className="absolute inset-0 bg-black" />
     ),
     className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
     scoring: "Founder Aptitude (0-20)",
     scoringDetail: "+8 for engagement & learning, +4 for coachability (feedback receptiveness)",
+    descriptionColor: "white",
   },
   {
     Icon: IdeaverseIcon,
@@ -122,11 +125,12 @@ const features = [
     href: "/ideaverse",
     cta: "Try it now",
     background: (
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-blue-200 dark:from-blue-950/20 dark:to-blue-900/20" />
+      <div className="absolute inset-0 bg-black" />
     ),
     className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
     scoring: "Community",
     scoringDetail: "Network effects — collaboration boosts all dimensions",
+    descriptionColor: "white",
   },
   {
     Icon: PitchGauntletIcon,
@@ -135,11 +139,12 @@ const features = [
     href: "/pitch-gauntlet",
     cta: "Try it now",
     background: (
-      <div className="absolute inset-0 bg-gradient-to-br from-pink-100 to-pink-200 dark:from-pink-950/20 dark:to-pink-900/20" />
+      <div className="absolute inset-0 bg-black" />
     ),
     className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-3",
     scoring: "Behavioral Resilience (0-20)",
     scoringDetail: "+8 for pitch confidence under pressure, +2 for improvement trend",
+    descriptionColor: "white",
   },
   {
     Icon: OMISPCapitalIcon,
@@ -148,23 +153,24 @@ const features = [
     href: "/capital",
     cta: "Try it now",
     background: (
-      <div className="absolute inset-0 bg-gradient-to-br from-green-100 to-emerald-200 dark:from-green-950/20 dark:to-emerald-900/20" />
+      <div className="absolute inset-0 bg-black" />
     ),
     className: "lg:col-start-3 lg:col-end-3 lg:row-start-3 lg:row-end-4",
     scoring: "VC Eligible at 70+",
     scoringDetail: "Score ≥70 unlocks VC visibility, ≥85 = elite status, 🦄 badge at 8+",
+    descriptionColor: "white",
   },
 ];
 
 const Features = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-20 bg-[#FFC300]">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Everything You Need to <span className="text-primary">Succeed</span>
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+            Everything You Need to <span className="text-white">Succeed</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             Six powerful features designed to build your credibility, sharpen your skills, and connect you with investors. Each one directly impacts your 0-100 OMISP Score.
           </p>
         </div>

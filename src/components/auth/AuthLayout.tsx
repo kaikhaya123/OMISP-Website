@@ -92,7 +92,7 @@ export const AuthShell = ({ children, sidePanel }: AuthShellProps) => (
         className="w-full max-w-[420px]"
       >
         {/* Mobile logo */}
-        <Link to="/" className="lg:hidden flex items-center gap-2 mb-8">
+        <Link to="/" className="lg:hidden flex items-center justify-center gap-2 mb-8 mx-auto w-fit">
           <img src="/logo/Omisp.png" alt="OMISP" className="w-8 h-8 object-contain" />
           <span className="font-tanker font-bold text-base text-foreground">OMISP</span>
         </Link>

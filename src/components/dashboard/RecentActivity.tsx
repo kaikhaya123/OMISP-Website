@@ -70,10 +70,10 @@ const getIcon = (type: Activity["type"]) => {
 const getColor = (type: Activity["type"]) => {
   const colorMap = {
     pitch: "text-red-500 bg-red-500/10",
-    view: "text-blue-500 bg-blue-500/10",
-    chat: "text-purple-500 bg-purple-500/10",
+    view: "text-primary bg-primary/10",
+    chat: "text-accent bg-accent/10",
     achievement: "text-yellow-500 bg-yellow-500/10",
-    interest: "text-green-500 bg-green-500/10",
+    interest: "text-primary bg-primary/10",
     score: "text-orange-500 bg-orange-500/10",
   };
   return colorMap[type];

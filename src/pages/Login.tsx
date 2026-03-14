@@ -42,7 +42,7 @@ const SIDE_CONTENT: Record<Role, {
       { icon: Target, text: "Saved search filters & alerts" },
       { icon: TrendingUp, text: "Portfolio founder tracking" },
     ],
-    backgroundImage: "/Images/Modern Digital Communication.png",
+    backgroundImage: "/Images/2009.i518.001_crowdfunding_set-07.jpg",
   },
 };
 
@@ -78,7 +78,7 @@ const Login = () => {
     }
 
     // Read persisted role from profiles table
-    const { data: profileData } = await (supabase.from("profiles") as any)
+    const { data: profileData } = await supabase.from("profiles")
       .select("role")
       .eq("id", data.user.id)
       .maybeSingle();
@@ -190,7 +190,7 @@ const Login = () => {
 
         <Button
           type="submit"
-          className="w-full gap-2 mt-1 bg-blue-600 hover:bg-blue-700 text-white font-tanker"
+          className="w-full gap-2 mt-1 bg-primary hover:bg-primary/90 text-white font-tanker"
           disabled={loading}
         >
           {loading ? "Signing in…" : "Sign in"}

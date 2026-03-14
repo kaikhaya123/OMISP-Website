@@ -37,7 +37,7 @@ const scoreItems = [
     max: 20, 
     icon: Brain,
     description: "Omi Chat engagement & learning",
-    color: "from-purple-500 to-violet-500"
+    color: "from-primary to-accent"
   },
   { 
     key: "executionReadiness" as const,
@@ -45,7 +45,7 @@ const scoreItems = [
     max: 20, 
     icon: Rocket,
     description: "Build-a-Biz Game performance",
-    color: "from-blue-500 to-cyan-500"
+    color: "from-accent to-primary"
   },
   { 
     key: "behavioralResilience" as const,
@@ -53,7 +53,7 @@ const scoreItems = [
     max: 20, 
     icon: Zap,
     description: "Pitch Perfect Gauntlet performance",
-    color: "from-pink-500 to-rose-500"
+    color: "from-primary to-yellow-500"
   },
   { 
     key: "progressVelocity" as const,

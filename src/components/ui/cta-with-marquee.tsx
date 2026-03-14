@@ -110,9 +110,9 @@ function ScrambleButton({ text, onClick, variant = "primary", className, icon }:
     }, 30);
   };
 
-  const baseStyles = "px-8 py-3 rounded-full font-semibold transition-colors flex items-center gap-2";
+  const baseStyles = "px-8 py-3 rounded-full font-semibold transition-colors flex items-center gap-2 border-2 border-black";
   const variantStyles = variant === "primary" 
-    ? "bg-primary text-primary-foreground hover:bg-primary/90" 
+    ? "bg-primary text-black hover:bg-primary/90" 
     : "border-2 border-foreground text-foreground hover:bg-foreground hover:text-background";
 
   return (
@@ -122,7 +122,6 @@ function ScrambleButton({ text, onClick, variant = "primary", className, icon }:
       className={cn(baseStyles, variantStyles, className)}
     >
       {displayText}
-      {icon && <span className="inline-flex">{icon}</span>}
     </button>
   );
 }
@@ -145,7 +144,7 @@ export function CTAWithMarquee({
   onSecondaryClick,
 }: CTAWithMarqueeProps) {
   return (
-    <div className="min-h-[600px] bg-background text-foreground flex items-center overflow-hidden relative py-20">
+    <div className="min-h-[600px] bg-[#FFC300] text-black flex items-center overflow-hidden relative py-20">
       <div className="container mx-auto px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
@@ -153,7 +152,7 @@ export function CTAWithMarquee({
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-tanker">
               {title}
             </h2>
-            <p className="text-lg text-muted-foreground max-w-xl font-tanker">
+            <p className="text-lg text-black border-black max-w-xl font-tanker">
               {subtitle}
             </p>
             <div className="flex flex-wrap gap-4 pt-4">
@@ -161,13 +160,6 @@ export function CTAWithMarquee({
                 text={primaryButtonText}
                 onClick={onPrimaryClick}
                 variant="primary"
-                icon={<img src="/Icons/speedometer.png" alt="Score" className="w-5 h-5" />}
-              />
-              <ScrambleButton 
-                text={secondaryButtonText}
-                onClick={onSecondaryClick}
-                variant="outline"
-                icon={<img src="/Icons/venture-capitalist.png" alt="VC" className="w-5 h-5" />}
               />
             </div>
           </div>

@@ -103,8 +103,8 @@ export default function AdminDashboard() {
   }
 
   const statCards = [
-    { label: "Total Founders", value: stats?.total_founders, icon: Users, color: "text-blue-500" },
-    { label: "Total Investors", value: stats?.total_investors, icon: Building2, color: "text-purple-500" },
+    { label: "Total Founders", value: stats?.total_founders, icon: Users, color: "text-primary" },
+    { label: "Total Investors", value: stats?.total_investors, icon: Building2, color: "text-accent" },
     { label: "Milestones Logged", value: stats?.total_milestones, icon: Trophy, color: "text-yellow-500" },
     { label: "Profile Views", value: stats?.total_profile_views, icon: Eye, color: "text-green-500" },
     { label: "Avg OMISP Score", value: stats ? stats.avg_omisp_score.toFixed(1) : null, icon: BarChart3, color: "text-primary" },

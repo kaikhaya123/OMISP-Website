@@ -271,7 +271,7 @@ export const getScoreInterpretation = (totalScore: number): {
 } => {
   if (totalScore >= 85) return { level: "Elite", description: "Elite founder, unicorn potential", color: "text-yellow-500" };
   if (totalScore >= 70) return { level: "Exceptional", description: "Exceptional founder, VC-ready", color: "text-green-500" };
-  if (totalScore >= 50) return { level: "Strong", description: "Strong founder, gaining traction", color: "text-blue-500" };
+  if (totalScore >= 50) return { level: "Strong", description: "Strong founder, gaining traction", color: "text-primary" };
   if (totalScore >= 30) return { level: "Building", description: "Building momentum", color: "text-orange-500" };
   return { level: "Early", description: "Early stage, needs development", color: "text-muted-foreground" };
 };

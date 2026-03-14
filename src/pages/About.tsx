@@ -38,7 +38,7 @@ const AboutPage = () => {
       
       <main className="">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950/20 dark:to-blue-900/20 overflow-hidden min-h-screen flex items-center">
+        <section className="relative bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/20 dark:to-amber-900/20 overflow-hidden min-h-screen flex items-center">
           <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
@@ -57,7 +57,7 @@ const AboutPage = () => {
                   provides a standardized way to build, track, and prove your credibility.
                 </p>
                 <Link to="/signup">
-                  <Button size="lg" className="bg-orange-300 hover:bg-orange-300 text-white font-tanker text-base px-8 py-6">
+                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-tanker text-base px-8 py-6">
                     Get Started
                   </Button>
                 </Link>
@@ -140,7 +140,7 @@ const AboutPage = () => {
         </section>
 
         {/* Founder Story Section */}
-        <section className="py-20 bg-gradient-to-br from-purple-50 to-blue-50 dark:from-purple-950/20 dark:to-blue-900/20">
+        <section className="py-20 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/20 dark:to-orange-900/20">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

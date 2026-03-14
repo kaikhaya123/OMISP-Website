@@ -487,7 +487,7 @@ const BuildABiz = () => {
               <CardContent className="space-y-4">
                 {/* AI Advice Panel */}
                 {showAdvice && (
-                  <Card className="bg-gradient-to-br from-purple-500/10 to-primary/5 border-purple-500/20">
+                  <Card className="bg-gradient-to-br from-accent/10 to-primary/5 border-accent/20">
                     <CardContent className="pt-4">
                       {isLoadingAdvice ? (
                         <div className="flex items-center gap-3 py-4">

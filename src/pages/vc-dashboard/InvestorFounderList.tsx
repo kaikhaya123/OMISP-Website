@@ -69,7 +69,7 @@ function isUnicornCandidate(f: FounderRow): boolean {
 function scoreColor(score: number) {
   if (score >= 80) return "text-yellow-500";
   if (score >= 70) return "text-green-500";
-  if (score >= 50) return "text-blue-500";
+  if (score >= 50) return "text-primary";
   return "text-muted-foreground";
 }
 

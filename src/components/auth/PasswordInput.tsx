@@ -27,8 +27,8 @@ const strengthColor = [
   "bg-destructive",
   "bg-destructive",
   "bg-yellow-400",
-  "bg-blue-400",
-  "bg-green-500",
+  "bg-primary",
+  "bg-primary",
 ];
 
 export const PasswordInput = ({ id, label, value, onChange, placeholder = "••••••••", showStrength, hint }: PasswordInputProps) => {

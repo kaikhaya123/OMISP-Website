@@ -181,7 +181,7 @@ const RevenueArchitect = () => {
             <Button 
               onClick={runAIAnalysis} 
               disabled={isAnalyzing}
-              className="gap-2 bg-gradient-to-r from-primary to-purple-600 hover:from-primary/90 hover:to-purple-600/90"
+              className="gap-2 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
             >
               {isAnalyzing ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
@@ -201,7 +201,7 @@ const RevenueArchitect = () => {
       <main className="container mx-auto px-4 py-8">
         {/* AI Insights Banner */}
         {aiAnalysis && (
-          <Card className="mb-8 bg-gradient-to-r from-primary/10 via-purple-500/10 to-primary/5 border-primary/20">
+          <Card className="mb-8 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/5 border-primary/20">
             <CardHeader>
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center gap-2">
@@ -450,19 +450,19 @@ const RevenueArchitect = () => {
                   <p className="text-sm text-muted-foreground">{currentMetrics.customers} customers</p>
                 </CardContent>
               </Card>
-              <Card className="bg-gradient-to-br from-blue-500/10 to-blue-500/5">
+              <Card className="bg-gradient-to-br from-primary/10 to-primary/5">
                 <CardHeader className="pb-2">
                   <CardDescription>Year 2 ARR</CardDescription>
-                  <CardTitle className="text-2xl text-blue-600">${year2Metrics.arr.toLocaleString()}</CardTitle>
+                  <CardTitle className="text-2xl text-primary">${year2Metrics.arr.toLocaleString()}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">{year2Metrics.customers} customers</p>
                 </CardContent>
               </Card>
-              <Card className="bg-gradient-to-br from-purple-500/10 to-purple-500/5">
+              <Card className="bg-gradient-to-br from-accent/10 to-accent/5">
                 <CardHeader className="pb-2">
                   <CardDescription>Year 3 ARR</CardDescription>
-                  <CardTitle className="text-2xl text-purple-600">${year3Metrics.arr.toLocaleString()}</CardTitle>
+                  <CardTitle className="text-2xl text-accent">${year3Metrics.arr.toLocaleString()}</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-sm text-muted-foreground">{year3Metrics.customers} customers</p>
@@ -567,7 +567,7 @@ const RevenueArchitect = () => {
               </Card>
             </div>
 
-            <Card className="bg-gradient-to-br from-primary/5 to-purple-500/5">
+            <Card className="bg-gradient-to-br from-primary/5 to-accent/5">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Lightbulb className="w-5 h-5 text-primary" />

@@ -63,9 +63,9 @@ function fmtFunding(v: number) {
   return `$${v}`;
 }
 function scoreColor(s: number) {
-  if (s >= 80) return "text-yellow-500";
+  if (s >= 80) return "text-accent";
   if (s >= 60) return "text-green-500";
-  if (s >= 40) return "text-blue-500";
+  if (s >= 40) return "text-primary";
   return "text-muted-foreground";
 }
 function isUnicorn(p: FounderProfile, s: OmispScore | null) {

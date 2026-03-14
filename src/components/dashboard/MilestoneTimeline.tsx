@@ -96,7 +96,7 @@ const MilestoneTimeline = () => {
               <div
                 className={`w-10 h-10 rounded-full flex items-center justify-center ${
                   milestone.status === "completed"
-                    ? "bg-green-500/20 text-green-500"
+                    ? "bg-primary/20 text-primary"
                     : milestone.status === "current"
                     ? "bg-primary/20 text-primary"
                     : "bg-muted text-muted-foreground"
@@ -113,7 +113,7 @@ const MilestoneTimeline = () => {
               {index < milestones.length - 1 && (
                 <div
                   className={`absolute left-1/2 top-10 w-0.5 h-8 -translate-x-1/2 ${
-                    milestone.status === "completed" ? "bg-green-500/50" : "bg-border"
+                    milestone.status === "completed" ? "bg-primary/50" : "bg-border"
                   }`}
                 />
               )}

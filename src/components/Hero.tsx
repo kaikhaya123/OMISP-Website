@@ -77,7 +77,7 @@ const Hero = () => {
                   </span>
                 </h1>
 
-                <p className="text-xs md:text-sm lg:text-base leading-relaxed text-white/90 max-w-2xl text-center mt-2" style={{ fontFamily: 'Lora, serif' }}>
+                <p className="text-xs md:text-sm lg:text-base leading-relaxed text-white max-w-2xl text-center mt-2" style={{ fontFamily: 'Lora, serif' }}>
                   Stop guessing and start winning. OMISP transforms your raw potential into AI-validated credibility that top-tier VCs can't ignore.
                 </p>
               </div>
@@ -96,18 +96,18 @@ const Hero = () => {
       </section>
 
     {/* Scroll Animation Section */}
-    <section className="relative overflow-hidden bg-background">
+    <section className="bg-white relative overflow-hidden bg-background">
       <ContainerScroll
         titleComponent={
           <>
-            <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
+            <h2 className="text-black text-3xl md:text-5xl font-bold mb-4">
               Your AI-Powered
               <br />
               <span className="text-4xl md:text-[4rem] font-bold mt-1 leading-none bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
                 Credibility Engine
               </span>
             </h2>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-black text-lg md:text-xl max-w-2xl mx-auto">
               Track milestones, validate progress, and build your OMISP Score in real-time
             </p>
           </>

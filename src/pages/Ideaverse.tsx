@@ -209,10 +209,10 @@ const Ideaverse = () => {
 
   const getTypeBadge = (type: Post["type"]) => {
     const styles: Record<Post["type"], { bg: string; icon: any }> = {
-      idea: { bg: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300", icon: Lightbulb },
-      feedback: { bg: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300", icon: MessageSquare },
-      cofounder: { bg: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300", icon: Users },
-      discussion: { bg: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300", icon: TrendingUp },
+      idea: { bg: "bg-primary/10 text-primary dark:bg-primary/30 dark:text-primary", icon: Lightbulb },
+      feedback: { bg: "bg-accent/10 text-accent dark:bg-accent/30 dark:text-accent", icon: MessageSquare },
+      cofounder: { bg: "bg-primary/10 text-primary dark:bg-primary/30 dark:text-primary", icon: Users },
+      discussion: { bg: "bg-accent/10 text-accent dark:bg-accent/30 dark:text-accent", icon: TrendingUp },
     };
     const style = styles[type];
     const Icon = style.icon;
@@ -235,7 +235,7 @@ const Ideaverse = () => {
             <div>
               <h1 className="text-xl font-bold text-foreground flex items-center gap-2">
                 Ideaverse Hub
-                <Badge className="bg-gradient-to-r from-purple-500 to-pink-500 text-white border-0">
+                <Badge className="bg-gradient-to-r from-primary to-accent text-white border-0">
                   <Zap className="w-3 h-3 mr-1" />
                   AI Insights
                 </Badge>
@@ -391,7 +391,7 @@ const Ideaverse = () => {
                 )}
 
                 {post.aiAnalysis && (
-                  <Card className="bg-gradient-to-br from-purple-500/10 to-primary/5 border-purple-500/20">
+                  <Card className="bg-gradient-to-br from-accent/10 to-primary/5 border-accent/20">
                     <CardContent className="pt-4 space-y-3">
                       <div className="flex items-center justify-between">
                         <span className="text-sm font-medium flex items-center gap-1">

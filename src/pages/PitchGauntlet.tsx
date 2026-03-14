@@ -325,10 +325,10 @@ const PitchGauntlet = () => {
 
   const getDifficultyBadge = (difficulty: string) => {
     const styles: Record<string, string> = {
-      easy: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
+      easy: "bg-primary/10 text-primary dark:bg-primary/30 dark:text-primary",
       medium: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
       hard: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-300",
-      legendary: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-300 animate-pulse"
+      legendary: "bg-primary/10 text-primary dark:bg-primary/30 dark:text-primary animate-pulse"
     };
     return styles[difficulty] || styles.medium;
   };
@@ -380,7 +380,7 @@ const PitchGauntlet = () => {
                 <Card 
                   key={investor.id} 
                   className={`cursor-pointer hover:shadow-lg transition-all hover:-translate-y-1 ${
-                    investor.difficulty === "legendary" ? "ring-2 ring-purple-500/50" : ""
+                    investor.difficulty === "legendary" ? "ring-2 ring-accent/50" : ""
                   }`}
                   onClick={() => startPractice(investor)}
                 >
@@ -389,7 +389,7 @@ const PitchGauntlet = () => {
                       <div className="flex items-center gap-3">
                         <div className={`w-12 h-12 rounded-full ${
                           investor.difficulty === "legendary" 
-                            ? "bg-gradient-to-br from-purple-500 to-pink-500" 
+                            ? "bg-gradient-to-br from-primary to-accent" 
                             : "bg-primary/10"
                         } flex items-center justify-center font-semibold ${
                           investor.difficulty === "legendary" ? "text-white" : "text-primary"
@@ -525,7 +525,7 @@ const PitchGauntlet = () => {
           <div className="max-w-3xl mx-auto space-y-8">
             {isAnalyzing ? (
               <div className="text-center space-y-6 py-16">
-                <div className="w-24 h-24 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center mx-auto animate-pulse">
+                <div className="w-24 h-24 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto animate-pulse">
                   <Loader2 className="w-12 h-12 text-white animate-spin" />
                 </div>
                 <h2 className="text-2xl font-bold">Analyzing Your Pitch...</h2>
@@ -621,7 +621,7 @@ const PitchGauntlet = () => {
                 </div>
 
                 {/* Investor Feedback */}
-                <Card className="bg-gradient-to-br from-primary/10 to-purple-500/10 border-primary/20">
+                <Card className="bg-gradient-to-br from-primary/10 to-accent/10 border-primary/20">
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
                       <Sparkles className="w-5 h-5 text-primary" />

@@ -39,7 +39,7 @@ const ScoreCard = ({ scores = defaultScores, showBadges = true, compact = false 
       max: 20, 
       icon: Brain,
       description: "Omi Chat engagement & learning",
-      color: "from-purple-500 to-violet-500"
+      color: "from-primary to-accent"
     },
     { 
       label: "Execution Readiness", 
@@ -47,7 +47,7 @@ const ScoreCard = ({ scores = defaultScores, showBadges = true, compact = false 
       max: 20, 
       icon: Rocket,
       description: "Market Heartbeat Saga performance",
-      color: "from-blue-500 to-cyan-500"
+      color: "from-accent to-primary"
     },
     { 
       label: "Behavioral Resilience", 
@@ -55,7 +55,7 @@ const ScoreCard = ({ scores = defaultScores, showBadges = true, compact = false 
       max: 20, 
       icon: Zap,
       description: "Pitch Perfect Gauntlet performance",
-      color: "from-pink-500 to-rose-500"
+      color: "from-accent to-yellow-500"
     },
     { 
       label: "Progress Velocity", 
@@ -134,7 +134,7 @@ const ScoreCard = ({ scores = defaultScores, showBadges = true, compact = false 
       {showBadges && (
         <div className="flex flex-wrap gap-2 mt-6">
           {isVCEligible && (
-            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-green-500/10 text-green-600 dark:text-green-400 text-sm font-medium border border-green-500/20">
+            <span className="inline-flex items-center px-3 py-1.5 rounded-full bg-primary/10 text-primary dark:text-primary text-sm font-medium border border-primary/20">
               ✅ VC Eligible
             </span>
           )}
