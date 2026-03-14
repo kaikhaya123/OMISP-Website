@@ -57,8 +57,8 @@ const SignUp = () => {
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="w-full max-w-2xl">
           <div className="text-center mb-10">
             <Link to="/" className="inline-flex items-center gap-2.5 mb-8 group">
-              <img src="/favicon.ico" alt="" className="w-0 h-0" />
-              <span className="font-bold text-2xl text-foreground tracking-tight">OMISP</span>
+              <img src="/logo/Omisp.png" alt="OMISP" className="w-10 h-10 object-contain" />
+              <span className="font-tanker font-bold text-2xl text-foreground tracking-tight">OMISP</span>
             </Link>
             <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3 leading-tight">
               How will you use OMISP?

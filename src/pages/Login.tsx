@@ -20,6 +20,7 @@ const SIDE_CONTENT: Record<Role, {
   headline: string;
   sub: string;
   bullets: { icon: React.ElementType; text: string }[];
+  backgroundImage: string;
 }> = {
   founder: {
     accent: "bg-primary",
@@ -30,6 +31,7 @@ const SIDE_CONTENT: Record<Role, {
       { icon: Target, text: "Unlock improvement insights" },
       { icon: Rocket, text: "Stay visible on VC leaderboards" },
     ],
+    backgroundImage: "/Images/Blue Piggy Bank.png",
   },
   vc: {
     accent: "bg-foreground",
@@ -40,6 +42,7 @@ const SIDE_CONTENT: Record<Role, {
       { icon: Target, text: "Saved search filters & alerts" },
       { icon: TrendingUp, text: "Portfolio founder tracking" },
     ],
+    backgroundImage: "/Images/Modern Digital Communication.png",
   },
 };
 
@@ -101,10 +104,13 @@ const Login = () => {
     <AnimatePresence mode="wait">
       <motion.div
         key={role}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0.3 }}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: 20 }}
+        transition={{ 
+          duration: 0.5,
+          ease: [0.43, 0.13, 0.23, 0.96]
+        }}
         className="contents"
       >
         <AuthSidePanel
@@ -112,6 +118,7 @@ const Login = () => {
           headline={side.headline}
           subheadline={side.sub}
           bullets={side.bullets}
+          backgroundImage={side.backgroundImage}
         />
       </motion.div>
     </AnimatePresence>
@@ -125,7 +132,7 @@ const Login = () => {
           <button
             key={r}
             onClick={() => setRole(r)}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-all ${
+            className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-tanker font-medium transition-all duration-300 ease-in-out ${
               role === r ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
             }`}
           >
@@ -138,15 +145,18 @@ const Login = () => {
       <AnimatePresence mode="wait">
         <motion.div
           key={role}
-          initial={{ opacity: 0, y: 6 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -6 }}
-          transition={{ duration: 0.2 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ 
+            duration: 0.4,
+            ease: [0.43, 0.13, 0.23, 0.96]
+          }}
         >
-          <h1 className="text-2xl font-bold text-foreground mb-1">
+          <h1 className="text-2xl font-tanker font-bold text-foreground mb-1">
             {isFounder ? "Welcome back, builder" : "Welcome back, investor"}
           </h1>
-          <p className="text-muted-foreground text-sm mb-7">
+          <p className="text-muted-foreground text-sm font-tanker mb-7">
             {isFounder
               ? "Sign in to check your score and keep building momentum."
               : "Sign in to explore the latest data-verified founders."}
@@ -156,13 +166,13 @@ const Login = () => {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-1.5">
-          <Label htmlFor="email">Email address</Label>
+          <Label htmlFor="email" className="font-tanker">Email address</Label>
           <div className="relative">
             <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
             <Input
               id="email" type="email"
               placeholder={isFounder ? "founder@startup.com" : "partner@fund.com"}
-              className="pl-9"
+              className="pl-9 font-tanker"
               value={email} onChange={(e) => setEmail(e.target.value)} required
             />
           </div>
@@ -170,8 +180,8 @@ const Login = () => {
 
         <div className="space-y-1.5">
           <div className="flex items-center justify-between">
-            <Label htmlFor="password">Password</Label>
-            <Link to="/forgot-password" className="text-xs text-primary hover:underline font-medium">
+            <Label htmlFor="password" className="font-tanker">Password</Label>
+            <Link to="/forgot-password" className="text-xs text-primary hover:underline font-tanker font-medium">
               Forgot password?
             </Link>
           </div>
@@ -180,7 +190,7 @@ const Login = () => {
 
         <Button
           type="submit"
-          className={`w-full gap-2 mt-1 ${!isFounder ? "bg-foreground text-background hover:bg-foreground/90" : ""}`}
+          className="w-full gap-2 mt-1 bg-blue-600 hover:bg-blue-700 text-white font-tanker"
           disabled={loading}
         >
           {loading ? "Signing in…" : "Sign in"}
@@ -191,9 +201,9 @@ const Login = () => {
       <AuthDivider />
       <GoogleButton onClick={handleGoogle} />
 
-      <p className="text-center text-sm text-muted-foreground mt-6">
+      <p className="text-center text-sm text-muted-foreground font-tanker mt-6">
         Don't have an account?{" "}
-        <Link to="/signup" className="text-primary font-semibold hover:underline">Create one</Link>
+        <Link to="/signup" className="text-primary font-tanker font-semibold hover:underline">Create one</Link>
       </p>
     </AuthShell>
   );

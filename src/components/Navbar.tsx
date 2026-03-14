@@ -46,7 +46,7 @@ const Navbar = () => {
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
           <img src="/logo/Omisp.png" className="h-14 w-auto object-contain mt-1" alt="OMISP Logo" />
-          <span className="text-xl md:text-2xl text-foreground font-bold whitespace-nowrap leading-none">
+          <span className="font-tanker font-bold text-xl md:text-2xl text-foreground whitespace-nowrap leading-none">
             OMISP
           </span>
         </Link>

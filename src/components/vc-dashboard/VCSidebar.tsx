@@ -76,10 +76,10 @@ export function VCSidebar() {
   return (
     <Sidebar collapsible="icon" className="border-r border-sidebar-border bg-sidebar">
       <div className="flex items-center gap-2 px-4 py-5 border-b border-sidebar-border">
-        <img src="/logo/omisp-logo.png" alt="OMISP" className="w-8 h-8 object-contain shrink-0" />
+        <img src="/logo/Omisp.png" alt="OMISP" className="w-8 h-8 object-contain shrink-0" />
         {!collapsed && (
           <div>
-            <span className="font-semibold text-sm text-sidebar-foreground">OMISP</span>
+            <span className="font-tanker font-semibold text-sm text-sidebar-foreground">OMISP</span>
             <span className="text-xs text-sidebar-foreground/50 ml-1">Capital</span>
           </div>
         )}

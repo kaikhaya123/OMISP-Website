@@ -135,8 +135,8 @@ export default function ProfileSetup() {
       <div className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 h-14 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <img src="/logo/omisp-logo.png" alt="OMISP" className="w-7 h-7 object-contain" />
-            <span className="font-semibold text-foreground">OMISP</span>
+            <img src="/logo/Omisp.png" alt="OMISP" className="w-7 h-7 object-contain" />
+            <span className="font-tanker font-semibold text-foreground">OMISP</span>
           </Link>
           <Button variant="ghost" size="sm" onClick={() => navigate("/dashboard")} className="text-muted-foreground text-xs">
             Skip for now →

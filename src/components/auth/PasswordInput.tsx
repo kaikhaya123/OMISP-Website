@@ -37,14 +37,14 @@ export const PasswordInput = ({ id, label, value, onChange, placeholder = "â€¢â€
 
   return (
     <div className="space-y-1.5">
-      <Label htmlFor={id}>{label}</Label>
+      <Label htmlFor={id} className="font-tanker">{label}</Label>
       <div className="relative">
         <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
         <Input
           id={id}
           type={show ? "text" : "password"}
           placeholder={placeholder}
-          className="pl-9 pr-10"
+          className="pl-9 pr-10 font-tanker"
           value={value}
           onChange={(e) => onChange(e.target.value)}
           required
@@ -68,12 +68,12 @@ export const PasswordInput = ({ id, label, value, onChange, placeholder = "â€¢â€
               />
             ))}
           </div>
-          <p className={`text-xs ${strength >= 3 ? "text-muted-foreground" : "text-muted-foreground"}`}>
+          <p className={`text-xs font-tanker ${strength >= 3 ? "text-muted-foreground" : "text-muted-foreground"}`}>
             {strengthLabel[strength] ?? ""}
           </p>
         </div>
       )}
-      {hint && !showStrength && <p className="text-xs text-muted-foreground">{hint}</p>}
+      {hint && !showStrength && <p className="text-xs text-muted-foreground font-tanker">{hint}</p>}
     </div>
   );
 };

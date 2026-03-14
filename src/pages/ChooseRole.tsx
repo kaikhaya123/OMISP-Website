@@ -70,8 +70,8 @@ const ChooseRole = () => {
       >
         <div className="text-center mb-10">
           <Link to="/" className="inline-flex items-center gap-2 mb-8">
-            <img src="/logo/omisp-logo.png" alt="OMISP" className="w-12 h-12 object-contain" />
-            <span className="font-semibold text-2xl text-foreground">OMISP</span>
+            <img src="/logo/Omisp.png" alt="OMISP" className="w-12 h-12 object-contain" />
+            <span className="font-tanker font-semibold text-2xl text-foreground">OMISP</span>
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold text-foreground mb-3">
             How will you use OMISP?

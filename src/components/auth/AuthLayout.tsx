@@ -1,51 +1,77 @@
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface AuthPanelProps {
   accentClass?: string;
   headline: string;
   subheadline: string;
   bullets: { icon: React.ElementType; text: string }[];
+  backgroundImage?: string;
 }
 
-export const AuthSidePanel = ({ accentClass = "bg-primary", headline, subheadline, bullets }: AuthPanelProps) => (
+export const AuthSidePanel = ({ accentClass = "bg-primary", headline, subheadline, bullets, backgroundImage = "/Images/Modern Digital Communication.png" }: AuthPanelProps) => (
   <div className={`hidden lg:flex lg:w-[45%] xl:w-1/2 relative overflow-hidden flex-shrink-0 ${accentClass}`}>
-    {/* Subtle texture blobs */}
-    <div className="absolute inset-0 pointer-events-none">
-      <div className="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-background/5 blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-background/5 blur-3xl" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-background/3 blur-2xl" />
-    </div>
+    {/* Background Image with Advanced Animation */}
+    <AnimatePresence mode="wait">
+      <motion.div
+        key={backgroundImage}
+        initial={{ opacity: 0, scale: 1.1 }}
+        animate={{ opacity: 1, scale: 1 }}
+        exit={{ opacity: 0, scale: 0.95 }}
+        transition={{ 
+          duration: 0.6,
+          ease: [0.43, 0.13, 0.23, 0.96]
+        }}
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: `url("${backgroundImage}")`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      />
+    </AnimatePresence>
+    
+    {/* Overlay for better text readability */}
+    <motion.div 
+      className="absolute inset-0 bg-black/40 z-0"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4, delay: 0.2 }}
+    />
 
     <div className="relative z-10 flex flex-col justify-between p-12 xl:p-16 w-full">
-      <Link to="/" className="flex items-center gap-3 w-fit">
-        <img src="/logo/omisp-logo.png" alt="OMISP" className="w-9 h-9 object-contain brightness-[10]" />
-        <span className="font-bold text-lg tracking-tight text-primary-foreground">OMISP</span>
-      </Link>
-
       <motion.div
-        initial={{ opacity: 0, y: 16 }}
+        initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.45, delay: 0.1 }}
-        className="max-w-sm"
+        transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <h2 className="text-3xl xl:text-4xl font-bold text-primary-foreground leading-[1.15] mb-5"
-          dangerouslySetInnerHTML={{ __html: headline }}
-        />
-        <p className="text-primary-foreground/70 text-base mb-10 leading-relaxed">{subheadline}</p>
-        <ul className="space-y-4">
-          {bullets.map(({ icon: Icon, text }) => (
-            <li key={text} className="flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-primary-foreground/10 flex items-center justify-center flex-shrink-0">
-                <Icon className="w-4 h-4 text-primary-foreground" />
-              </span>
-              <span className="text-primary-foreground/80 text-sm font-medium">{text}</span>
-            </li>
-          ))}
-        </ul>
+        <Link to="/" className="flex items-center gap-3 w-fit">
+          <img src="/logo/Omisp.png" alt="OMISP" className="w-9 h-9 object-contain" />
+          <span className="font-tanker font-bold text-lg tracking-tight text-white">OMISP</span>
+        </Link>
       </motion.div>
 
-      <p className="text-primary-foreground/40 text-xs">© {new Date().getFullYear()} OMISP. All rights reserved.</p>
+      <div className="flex-1"></div>
+
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={headline}
+          initial={{ opacity: 0, y: 20, scale: 0.98 }}
+          animate={{ opacity: 1, y: 0, scale: 1 }}
+          exit={{ opacity: 0, y: -10, scale: 0.98 }}
+          transition={{ 
+            duration: 0.5,
+            ease: [0.43, 0.13, 0.23, 0.96],
+            delay: 0.2
+          }}
+          className="max-w-sm"
+        >
+          <h2 className="text-3xl xl:text-4xl font-bold text-white leading-[1.15]"
+            dangerouslySetInnerHTML={{ __html: headline }}
+          />
+        </motion.div>
+      </AnimatePresence>
     </div>
   </div>
 );
@@ -67,8 +93,8 @@ export const AuthShell = ({ children, sidePanel }: AuthShellProps) => (
       >
         {/* Mobile logo */}
         <Link to="/" className="lg:hidden flex items-center gap-2 mb-8">
-          <img src="/logo/omisp-logo.png" alt="OMISP" className="w-8 h-8 object-contain" />
-          <span className="font-bold text-base text-foreground">OMISP</span>
+          <img src="/logo/Omisp.png" alt="OMISP" className="w-8 h-8 object-contain" />
+          <span className="font-tanker font-bold text-base text-foreground">OMISP</span>
         </Link>
         {children}
       </motion.div>
@@ -82,7 +108,7 @@ export const AuthDivider = ({ label = "Or continue with" }: { label?: string }) 
       <div className="w-full border-t border-border" />
     </div>
     <div className="relative flex justify-center">
-      <span className="bg-background px-3 text-xs text-muted-foreground uppercase tracking-wide">{label}</span>
+      <span className="bg-background px-3 text-xs text-muted-foreground uppercase tracking-wide font-tanker">{label}</span>
     </div>
   </div>
 );
@@ -91,7 +117,7 @@ export const GoogleButton = ({ onClick }: { onClick: () => void }) => (
   <button
     type="button"
     onClick={onClick}
-    className="w-full flex items-center justify-center gap-2.5 rounded-lg border border-border bg-card hover:bg-muted transition-colors py-2.5 text-sm font-medium text-foreground"
+    className="w-full flex items-center justify-center gap-2.5 rounded-lg border border-border bg-card hover:bg-muted transition-colors py-2.5 text-sm font-tanker font-medium text-foreground"
   >
     <svg className="w-4 h-4" viewBox="0 0 24 24">
       <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />

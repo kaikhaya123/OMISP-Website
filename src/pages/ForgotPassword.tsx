@@ -43,8 +43,8 @@ const ForgotPassword = () => {
 
           <div className="p-8 md:p-10">
             <Link to="/" className="flex items-center gap-2.5 mb-8">
-              <img src="/logo/omisp-logo.png" alt="OMISP" className="w-9 h-9 object-contain" />
-              <span className="font-bold text-lg text-foreground tracking-tight">OMISP</span>
+              <img src="/logo/Omisp.png" alt="OMISP" className="w-9 h-9 object-contain" />
+              <span className="font-tanker font-bold text-lg text-foreground tracking-tight">OMISP</span>
             </Link>
 
             {sent ? (

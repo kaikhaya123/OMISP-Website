@@ -16,7 +16,7 @@ const Footer = () => {
             <img src="/logo/Omisp.png" alt="OMISP" className="w-full h-full object-contain p-2" />
           </div>
           <article className='py-2 2xl:w-80 w-64 space-y-3'>
-            <h1 className='newFont text-3xl font-bold text-white'>OMISP</h1>
+            <h1 className='font-tanker text-3xl font-bold text-white'>OMISP</h1>
             <p className='text-sm leading-[120%] text-gray-300'>
               One Move. Infinite Power. Empowering founders with AI-driven tools for pitching, 
               validation, and growth. Building the future of entrepreneurship, one startup at a time.
