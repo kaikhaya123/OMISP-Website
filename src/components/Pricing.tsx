@@ -142,7 +142,7 @@ const Pricing = () => {
           </TabsList>
 
           <TabsContent value="founders">
-            <div className="flex flex-col md:flex-row gap-8 md:gap-6 justify-center items-center w-full">
+            <div className="grid grid-cols-3 gap-8 md:gap-6 justify-items-center w-full">
               {founderPlansWithNavigation.map((plan) => (
                 <PricingCard key={plan.planName} {...plan} />
               ))}
@@ -150,7 +150,7 @@ const Pricing = () => {
           </TabsContent>
 
           <TabsContent value="vcs">
-            <div className="flex flex-col md:flex-row gap-8 md:gap-6 justify-center items-center w-full">
+            <div className="grid grid-cols-3 gap-8 md:gap-6 justify-items-center w-full">
               {vcPlansWithNavigation.map((plan) => (
                 <PricingCard key={plan.planName} {...plan} />
               ))}

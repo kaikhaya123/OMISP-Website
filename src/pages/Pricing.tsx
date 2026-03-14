@@ -179,7 +179,7 @@ const PricingPage = () => {
 
             {/* Founder Plans */}
             <TabsContent value="founders">
-              <div className="grid md:grid-cols-3 gap-8">
+              <div className="grid grid-cols-3 gap-8">
                 {founderPlans.map((plan, index) => (
                   <div
                     key={index}

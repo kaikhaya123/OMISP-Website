@@ -24,7 +24,7 @@ const steps = [
     title: "Track Progress",
     description: "Log real milestones like revenue, team size, and funding to boost your OMISP score and build verified credibility.",
     image: "/Images/Data Analysis Discussion.png",
-    color: '##FFC300',
+    color: '#FFC300',
   },
   {
     number: "04",
