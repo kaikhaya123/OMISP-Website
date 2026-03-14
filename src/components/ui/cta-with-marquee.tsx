@@ -110,7 +110,7 @@ function ScrambleButton({ text, onClick, variant = "primary", className, icon }:
     }, 30);
   };
 
-  const baseStyles = "px-8 py-3 rounded-full font-semibold transition-colors flex items-center gap-2 border-2 border-black";
+  const baseStyles = "px-4 md:px-6 lg:px-8 py-2.5 md:py-3 rounded-full font-semibold transition-colors flex items-center gap-2 border-2 border-black text-sm md:text-base";
   const variantStyles = variant === "primary" 
     ? "bg-primary text-black hover:bg-primary/90" 
     : "border-2 border-foreground text-foreground hover:bg-foreground hover:text-background";
@@ -144,18 +144,18 @@ export function CTAWithMarquee({
   onSecondaryClick,
 }: CTAWithMarqueeProps) {
   return (
-    <div className="min-h-[600px] bg-[#FFC300] text-black flex items-center overflow-hidden relative py-20">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <div className="min-h-[500px] md:min-h-[600px] bg-[#FFC300] text-black flex items-center overflow-hidden relative py-16 md:py-20">
+      <div className="container mx-auto px-4 md:px-6 lg:px-12">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-6">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-tanker">
+          <div className="space-y-4 md:space-y-6 text-center lg:text-left">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight font-tanker">
               {title}
             </h2>
-            <p className="text-lg text-black border-black max-w-xl font-tanker">
+            <p className="text-base md:text-lg text-black border-black max-w-xl mx-auto lg:mx-0 font-tanker">
               {subtitle}
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 pt-2 md:pt-4 justify-center lg:justify-start">
               <ScrambleButton 
                 text={primaryButtonText}
                 onClick={onPrimaryClick}
@@ -164,13 +164,13 @@ export function CTAWithMarquee({
             </div>
           </div>
 
-          {/* Right Marquee Grid */}
-          <div className="space-y-4 overflow-hidden">
+          {/* Right Marquee Grid - Hidden on mobile */}
+          <div className="space-y-3 md:space-y-4 overflow-hidden hidden md:block">
             <Marquee speed={30} reverse className="[--gap:1rem]">
               {images.map((src, idx) => (
                 <div
                   key={idx}
-                  className="relative w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0"
+                  className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-2xl overflow-hidden flex-shrink-0"
                 >
                   <img
                     src={src}
@@ -184,7 +184,7 @@ export function CTAWithMarquee({
               {images2.map((src, idx) => (
                 <div
                   key={idx}
-                  className="relative w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0"
+                  className="relative w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 rounded-2xl overflow-hidden flex-shrink-0"
                 >
                   <img
                     src={src}

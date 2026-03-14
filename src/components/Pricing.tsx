@@ -121,19 +121,19 @@ const Pricing = () => {
   }));
 
   return (
-    <section className="py-20 bg-[#FFC300] relative min-h-screen">
+    <section className="py-16 md:py-20 lg:py-24 bg-[#FFC300] relative min-h-screen">
       <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-black mb-4 font-tanker">
+        <div className="text-center mb-8 md:mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mb-3 md:mb-4 font-tanker px-4">
             Choose Your Plan
           </h2>
-          <p className="text-lg text-black max-w-2xl mx-auto font-tanker">
+          <p className="text-base md:text-lg text-black max-w-2xl mx-auto font-tanker px-4">
             Plans for founders building the future and VCs discovering them.
           </p>
         </div>
 
         <Tabs defaultValue="founders" className="max-w-6xl mx-auto">
-          <TabsList className="grid w-full max-w-xs mx-auto grid-cols-2 mb-12 md:mb-14">
+          <TabsList className="grid w-full max-w-xs mx-auto grid-cols-2 mb-8 md:mb-12 lg:mb-14">
             <TabsTrigger value="founders">For Founders</TabsTrigger>
             <TabsTrigger value="vcs" className="gap-1">
               <Building2 className="w-4 h-4" />
@@ -142,7 +142,7 @@ const Pricing = () => {
           </TabsList>
 
           <TabsContent value="founders">
-            <div className="grid grid-cols-3 gap-8 md:gap-6 justify-items-center w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-items-center w-full">
               {founderPlansWithNavigation.map((plan) => (
                 <PricingCard key={plan.planName} {...plan} />
               ))}
@@ -150,7 +150,7 @@ const Pricing = () => {
           </TabsContent>
 
           <TabsContent value="vcs">
-            <div className="grid grid-cols-3 gap-8 md:gap-6 justify-items-center w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-items-center w-full">
               {vcPlansWithNavigation.map((plan) => (
                 <PricingCard key={plan.planName} {...plan} />
               ))}

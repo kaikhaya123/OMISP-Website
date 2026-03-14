@@ -13,7 +13,7 @@ const BentoGrid = ({
   return (
     <div
       className={cn(
-        "grid w-full auto-rows-[22rem] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4",
+        "grid w-full auto-rows-[18rem] sm:auto-rows-[20rem] md:auto-rows-[22rem] grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4",
         className
       )}
     >
@@ -53,23 +53,23 @@ const BentoCard = ({
     )}
   >
     <div>{background}</div>
-    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-6 transition-all duration-300 group-hover:-translate-y-10">
-      <Icon className="h-12 w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75" />
-      <h3 className="text-xl font-semibold" style={{ color: '#FFC300' }}>
+    <div className="pointer-events-none z-10 flex transform-gpu flex-col gap-1 p-4 md:p-6 transition-all duration-300 group-hover:-translate-y-10">
+      <Icon className="h-10 w-10 md:h-12 md:w-12 origin-left transform-gpu text-neutral-700 transition-all duration-300 ease-in-out group-hover:scale-75" />
+      <h3 className="text-lg md:text-xl font-semibold" style={{ color: '#FFC300' }}>
         {name}
       </h3>
-      <p className="max-w-lg" style={{ color: descriptionColor }}>{description}</p>
+      <p className="max-w-lg text-sm md:text-base leading-relaxed" style={{ color: descriptionColor }}>{description}</p>
     </div>
 
     <div
       className={cn(
-        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
+        "pointer-events-none absolute bottom-0 flex w-full translate-y-10 transform-gpu flex-row items-center p-3 md:p-4 opacity-0 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100"
       )}
     >
-      <Button variant="ghost" asChild size="sm" className="pointer-events-auto">
+      <Button variant="ghost" asChild size="sm" className="pointer-events-auto text-sm">
         <a href={href}>
           {cta}
-          <ArrowRight className="ml-2 h-4 w-4" />
+          <ArrowRight className="ml-1 md:ml-2 h-3 w-3 md:h-4 md:w-4" />
         </a>
       </Button>
     </div>

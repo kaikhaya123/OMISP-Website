@@ -98,29 +98,29 @@ const ScoreExplainer = () => {
   }, []);
   
   return (
-    <section className="bg-[#FFC300] py-32">
+    <section className="bg-[#FFC300] py-16 md:py-24 lg:py-32">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         {/* Header */}
-        <div className="mb-24 flex flex-col items-center gap-6">
-          <p className="mb-2 text-black font-tanker text-lg font-semibold">OMISP Score System</p>
-          <h1 className="text-center text-3xl font-semibold text-white lg:max-w-4xl lg:text-5xl font-tanker">
+        <div className="mb-16 md:mb-20 lg:mb-24 flex flex-col items-center gap-4 md:gap-6">
+          <p className="mb-1 md:mb-2 text-black font-tanker text-base md:text-lg font-semibold">OMISP Score System</p>
+          <h1 className="text-center text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold text-white max-w-4xl font-tanker leading-tight">
             The 6D score that turns founder potential into investor signal
           </h1>
-          <p className="text-center text-lg font-medium text-black md:max-w-4xl lg:text-xl">
+          <p className="text-center text-base md:text-lg lg:text-xl font-medium text-black max-w-4xl px-4">
             OMISP does not rank founders on self-reported hype. It scores credibility across six measurable dimensions,
             then combines them into a 100-point profile investors can actually use.
           </p>
         </div>
 
-        {/* 6 Dimensions Grid - Feature166 Style */}
-        <div className="relative flex justify-center mb-16">
+        {/* 6 Dimensions Grid - Mobile Optimized Feature166 Style */}
+        <div className="relative flex justify-center mb-12 md:mb-16 px-4">
           <div className="relative flex w-full flex-col border border-muted">
-            {/* Top Row: 3 columns */}
-            <div className="relative flex flex-col lg:flex-row">
-              <div className="relative group flex flex-col justify-between border-b border-r border-solid border-muted p-10 lg:w-1/3 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden">
+            {/* Top Row: 3 columns -> stacked on mobile */}
+            <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+              <div className="relative group flex flex-col justify-between border-b border-solid border-muted md:border-r p-6 md:p-8 lg:p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden min-h-[200px] md:min-h-[250px]">
                 <div className="relative z-10">
-                  <h2 className="text-xl font-semibold text-white mb-2">{dimensions[0].title}</h2>
-                  <p className="text-black font-tanker mb-4">{dimensions[0].detail}</p>
+                  <h2 className="text-lg md:text-xl font-semibold text-white mb-2">{dimensions[0].title}</h2>
+                  <p className="text-black font-tanker mb-4 text-sm md:text-base">{dimensions[0].detail}</p>
                 </div>
                 <img
                   src={dimensions[0].image}
@@ -136,10 +136,10 @@ const ScoreExplainer = () => {
                 </div>
               </div>
               
-              <div className="relative group flex flex-col justify-between border-b border-r border-solid border-muted p-10 lg:w-1/3 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="relative group flex flex-col justify-between border-b border-solid border-muted lg:border-r p-6 md:p-8 lg:p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden min-h-[200px] md:min-h-[250px]">
                 <div className="relative z-10">
-                  <h2 className="text-xl font-semibold text-white mb-2">{dimensions[1].title}</h2>
-                  <p className="text-black font-tanker mb-4">{dimensions[1].detail}</p>
+                  <h2 className="text-lg md:text-xl font-semibold text-white mb-2">{dimensions[1].title}</h2>
+                  <p className="text-black font-tanker mb-4 text-sm md:text-base">{dimensions[1].detail}</p>
                 </div>
                 <img
                   src={dimensions[1].image}
@@ -155,10 +155,10 @@ const ScoreExplainer = () => {
                 </div>
               </div>
 
-              <div className="relative group flex flex-col justify-between border-b border-solid border-muted p-10 lg:w-1/3 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="relative group flex flex-col justify-between border-b border-solid border-muted md:border-r lg:border-r-0 p-6 md:p-8 lg:p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden min-h-[200px] md:min-h-[250px]">
                 <div className="relative z-10">
-                  <h2 className="text-xl font-semibold text-white mb-2">{dimensions[2].title}</h2>
-                  <p className="text-black font-tanker mb-4">{dimensions[2].detail}</p>
+                  <h2 className="text-lg md:text-xl font-semibold text-white mb-2">{dimensions[2].title}</h2>
+                  <p className="text-black font-tanker mb-4 text-sm md:text-base">{dimensions[2].detail}</p>
                 </div>
                 <img
                   src={dimensions[2].image}
@@ -175,12 +175,12 @@ const ScoreExplainer = () => {
               </div>
             </div>
 
-            {/* Bottom Row: 3 columns */}
-            <div className="relative flex flex-col border-t border-solid border-muted lg:flex-row">
-              <div className="relative group flex flex-col justify-between border-r border-solid border-muted p-10 lg:w-1/3 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden">
+            {/* Bottom Row: 3 columns -> stacked on mobile */}
+            <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-solid border-muted lg:border-t-0">
+              <div className="relative group flex flex-col justify-between border-b border-solid border-muted md:border-r md:border-b-0 lg:border-b p-6 md:p-8 lg:p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden min-h-[200px] md:min-h-[250px]">
                 <div className="relative z-10">
-                  <h2 className="text-xl font-semibold text-white mb-2">{dimensions[3].title}</h2>
-                  <p className="text-black font-tanker mb-4">{dimensions[3].detail}</p>
+                  <h2 className="text-lg md:text-xl font-semibold text-white mb-2">{dimensions[3].title}</h2>
+                  <p className="text-black font-tanker mb-4 text-sm md:text-base">{dimensions[3].detail}</p>
                 </div>
                 <img
                   src={dimensions[3].image}
@@ -196,10 +196,10 @@ const ScoreExplainer = () => {
                 </div>
               </div>
               
-              <div className="relative group flex flex-col justify-between border-r border-solid border-muted p-10 lg:w-1/3 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="relative group flex flex-col justify-between border-b border-solid border-muted lg:border-r lg:border-b p-6 md:p-8 lg:p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden min-h-[200px] md:min-h-[250px]">
                 <div className="relative z-10">
-                  <h2 className="text-xl font-semibold text-white mb-2">{dimensions[4].title}</h2>
-                  <p className="text-black font-tanker mb-4">{dimensions[4].detail}</p>
+                  <h2 className="text-lg md:text-xl font-semibold text-white mb-2">{dimensions[4].title}</h2>
+                  <p className="text-black font-tanker mb-4 text-sm md:text-base">{dimensions[4].detail}</p>
                 </div>
                 <img
                   src={dimensions[4].image}
@@ -215,10 +215,10 @@ const ScoreExplainer = () => {
                 </div>
               </div>
 
-              <div className="relative group flex flex-col justify-between p-10 lg:w-1/3 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden">
+              <div className="relative group flex flex-col justify-between md:border-r-0 p-6 md:p-8 lg:p-10 hover:bg-gray-50 transition-all duration-300 cursor-pointer overflow-hidden min-h-[200px] md:min-h-[250px]">
                 <div className="relative z-10">
-                  <h2 className="text-xl font-semibold text-white mb-2">{dimensions[5].title}</h2>
-                  <p className="text-black font-tanker mb-4">{dimensions[5].detail}</p>
+                  <h2 className="text-lg md:text-xl font-semibold text-white mb-2">{dimensions[5].title}</h2>
+                  <p className="text-black font-tanker mb-4 text-sm md:text-base">{dimensions[5].detail}</p>
                 </div>
                 <img
                   src={dimensions[5].image}
@@ -239,24 +239,24 @@ const ScoreExplainer = () => {
 
         {/* Investor Thresholds - Custom Progressive Layout */}
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-semibold text-black mb-4 font-tanker">What investors look for</h3>
+          <div className="text-center mb-8 md:mb-12">
+            <h3 className="text-2xl md:text-3xl font-semibold text-black mb-4 font-tanker px-4">What investors look for</h3>
             <Badge className="bg-black text-primary border-black">Thresholds</Badge>
           </div>
           
-          <div className="flex rounded-2xl overflow-hidden shadow-2xl">
+          <div className="flex flex-col lg:flex-row rounded-2xl overflow-hidden shadow-2xl">
             {/* Left Panel - Threshold Buttons */}
-            <div className="w-96 bg-black">
+            <div className="w-full lg:w-96 bg-black">
               {thresholdItems.map((item, index) => (
                 <button
                   key={index}
                   onClick={() => setActiveThreshold(index)}
-                  className={`relative w-full text-left p-6 border-b border-white/10 transition-all duration-300 ${
+                  className={`relative w-full text-left p-4 md:p-6 border-b lg:border-b border-white/10 transition-all duration-300 ${
                     activeThreshold === index ? 'bg-white/10' : 'hover:bg-white/5'
                   }`}
                 >
                   {/* Progress Bar */}
-                  <div className="absolute left-0 top-0 w-1 h-full bg-primary/30">
+                  <div className="absolute left-0 top-0 w-1 h-full bg-primary/30 lg:block hidden">
                     <div 
                       className="bg-primary w-full transition-all duration-300"
                       style={{ 
@@ -266,15 +266,26 @@ const ScoreExplainer = () => {
                     />
                   </div>
                   
-                  <div className="flex items-center justify-between mb-3">
-                    <h2 className='text-2xl font-bold text-primary font-tanker'>
+                  {/* Mobile Progress Bar - Bottom */}
+                  <div className="absolute bottom-0 left-0 h-1 w-full bg-primary/30 lg:hidden">
+                    <div 
+                      className="bg-primary h-full transition-all duration-300"
+                      style={{ 
+                        width: activeThreshold === index ? '100%' : '0%',
+                        transitionDelay: activeThreshold === index ? '0ms' : '300ms'
+                      }}
+                    />
+                  </div>
+                  
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-3 gap-2">
+                    <h2 className='text-xl md:text-2xl font-bold text-primary font-tanker'>
                       {item.title}
                     </h2>
-                    <span className='px-3 py-1 bg-primary/20 text-primary text-xs font-medium rounded-full font-tanker'>
+                    <span className='px-2 py-1 md:px-3 md:py-1 bg-primary/20 text-primary text-xs font-medium rounded-full font-tanker w-fit'>
                       {item.status}
                     </span>
                   </div>
-                  <p className='text-sm font-medium text-white leading-relaxed font-tanker'>
+                  <p className='text-xs md:text-sm font-medium text-white leading-relaxed font-tanker'>
                     {item.desc}
                   </p>
                 </button>
@@ -282,7 +293,7 @@ const ScoreExplainer = () => {
             </div>
             
             {/* Right Panel - Images */}
-            <div className="flex-1 relative overflow-hidden bg-black min-h-[400px]">
+            <div className="flex-1 relative overflow-hidden bg-black min-h-[300px] md:min-h-[400px] lg:min-h-[400px]">
               {thresholdItems.map((item, index) => (
                 <div
                   key={index}
@@ -303,14 +314,14 @@ const ScoreExplainer = () => {
             </div>
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <Button asChild className="bg-black text-primary hover:bg-black/90 font-tanker text-lg px-8 py-3">
+          <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mt-8 md:mt-12 px-4">
+            <Button asChild className="bg-black text-primary hover:bg-black/90 font-tanker text-base md:text-lg px-6 md:px-8 py-2 md:py-3 w-full sm:w-auto">
               <Link to="/signup">
                 Build My Score
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-4 md:w-5 h-4 md:h-5" />
               </Link>
             </Button>
-            <Button asChild variant="outline" className="border-black bg-transparent text-black hover:bg-black hover:text-primary font-tanker text-lg px-8 py-3">
+            <Button asChild variant="outline" className="border-black bg-transparent text-black hover:bg-black hover:text-primary font-tanker text-base md:text-lg px-6 md:px-8 py-2 md:py-3 w-full sm:w-auto">
               <Link to="/pricing">See Plans</Link>
             </Button>
           </div>

@@ -42,14 +42,14 @@ const Hero = () => {
         <div className="absolute inset-0 -top-20 bottom-0 bg-black/40 z-0" />
         
         {/* Content Container */}
-        <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-10 py-12">
-          <div className="flex flex-col items-center gap-8 md:gap-12 max-w-7xl mx-auto">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-16 relative z-10 py-8 md:py-12">
+          <div className="flex flex-col items-center gap-6 md:gap-8 lg:gap-12 max-w-7xl mx-auto">
             
             {/* Headline Section - Centered */}
-            <div className="flex gap-4 md:gap-6 items-center flex-col text-center w-full">
+            <div className="flex gap-4 md:gap-6 items-center flex-col text-center w-full px-4">
               {/* Animated Title */}
               <div className="flex gap-3 md:gap-4 flex-col items-center w-full">
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center font-regular leading-[1.1]">
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl tracking-tighter text-center font-regular leading-[1.1]">
                   <span className="text-white">Build something</span>
                   <span className="relative flex w-full justify-center overflow-hidden text-center md:pb-4 md:pt-1">
                     &nbsp;
@@ -77,15 +77,15 @@ const Hero = () => {
                   </span>
                 </h1>
 
-                <p className="text-xs md:text-sm lg:text-base leading-relaxed text-white max-w-2xl text-center mt-2" style={{ fontFamily: 'Tanker, sans-serif' }}>
+                <p className="text-sm md:text-base lg:text-lg leading-relaxed text-white max-w-2xl text-center mt-2 px-2" style={{ fontFamily: 'Tanker, sans-serif' }}>
                   Stop guessing and start winning. OMISP transforms your raw potential into AI-validated credibility that top-tier VCs can't ignore.
                 </p>
               </div>
 
               {/* CTAs */}
-              <div className="flex flex-col sm:flex-row gap-3 justify-center mt-2">
-                <Link to="/signup">
-                  <Button size="default" className="shadow-lg shadow-primary/25 w-full sm:w-auto" style={{ fontFamily: 'Tanker, sans-serif' }}>
+              <div className="flex flex-col sm:flex-row gap-3 justify-center mt-2 w-full max-w-md">
+                <Link to="/signup" className="w-full sm:w-auto">
+                  <Button size="default" className="shadow-lg shadow-primary/25 w-full sm:w-auto px-6 py-3" style={{ fontFamily: 'Tanker, sans-serif' }}>
                     Start Building Your Score
                   </Button>
                 </Link>
@@ -96,18 +96,18 @@ const Hero = () => {
       </section>
 
     {/* Scroll Animation Section */}
-    <section className="bg-white relative overflow-hidden bg-background">
+    <section className="bg-white relative overflow-hidden bg-background py-8 md:py-16">
       <ContainerScroll
         titleComponent={
           <>
-            <h2 className="text-black text-3xl md:text-5xl font-bold mb-4">
+            <h2 className="text-black text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 md:mb-4 px-4 text-center">
               Your AI-Powered
-              <br />
-              <span className="text-4xl md:text-[4rem] font-bold mt-1 leading-none bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+              <br className="hidden sm:block" />
+              <span className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mt-1 leading-none bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent block">
                 Credibility Engine
               </span>
             </h2>
-            <p className="text-black text-lg md:text-xl max-w-2xl mx-auto">
+            <p className="text-black text-base md:text-lg lg:text-xl max-w-2xl mx-auto px-4 text-center">
               Track milestones, validate progress, and build your OMISP Score in real-time
             </p>
           </>
@@ -115,7 +115,7 @@ const Hero = () => {
       >
         <video
           src="/Videos/573273_Business_Stock_3840x2160.mp4"
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          className="mx-auto rounded-2xl object-cover h-full object-left-top w-full"
           autoPlay
           loop
           muted

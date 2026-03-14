@@ -9,9 +9,9 @@ import videoMessageAnimation from "../../public/Lottie/Video Message.json";
 import digitalPortalAnimation from "../../public/Lottie/Digital Portal.json";
 import onlineBankingAnimation from "../../public/Lottie/Online Banking.json";
 
-// Custom Lottie Icon for Ideaverse
+// Custom Lottie Icon for Ideaverse - Mobile Responsive
 const IdeaverseIcon = ({ className }: { className?: string }) => (
-  <div className="h-48 w-48">
+  <div className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48">
     <Lottie 
       animationData={femaleStudentAnimation} 
       loop={true}
@@ -20,9 +20,9 @@ const IdeaverseIcon = ({ className }: { className?: string }) => (
   </div>
 );
 
-// Custom Lottie Icon for Revenue Architect
+// Custom Lottie Icon for Revenue Architect - Mobile Responsive
 const RevenueArchitectIcon = ({ className }: { className?: string }) => (
-  <div className="h-48 w-48">
+  <div className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48">
     <Lottie 
       animationData={techAssistantAnimation} 
       loop={true}
@@ -31,9 +31,9 @@ const RevenueArchitectIcon = ({ className }: { className?: string }) => (
   </div>
 );
 
-// Custom Lottie Icon for Market Heartbeat Saga
+// Custom Lottie Icon for Market Heartbeat Saga - Mobile Responsive
 const MarketHeartbeatIcon = ({ className }: { className?: string }) => (
-  <div className="h-48 w-48">
+  <div className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48">
     <Lottie 
       animationData={racesAnimation} 
       loop={true}
@@ -42,9 +42,9 @@ const MarketHeartbeatIcon = ({ className }: { className?: string }) => (
   </div>
 );
 
-// Custom Lottie Icon for Omi Chat
+// Custom Lottie Icon for Omi Chat - Mobile Responsive
 const OmiChatIcon = ({ className }: { className?: string }) => (
-  <div className="h-48 w-48">
+  <div className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48">
     <Lottie 
       animationData={videoMessageAnimation} 
       loop={true}
@@ -53,9 +53,9 @@ const OmiChatIcon = ({ className }: { className?: string }) => (
   </div>
 );
 
-// Custom Lottie Icon for Pitch Perfect Gauntlet
+// Custom Lottie Icon for Pitch Perfect Gauntlet - Mobile Responsive
 const PitchGauntletIcon = ({ className }: { className?: string }) => (
-  <div className="h-48 w-48">
+  <div className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48">
     <Lottie 
       animationData={digitalPortalAnimation} 
       loop={true}
@@ -64,9 +64,9 @@ const PitchGauntletIcon = ({ className }: { className?: string }) => (
   </div>
 );
 
-// Custom Lottie Icon for OMISP Capital
+// Custom Lottie Icon for OMISP Capital - Mobile Responsive
 const OMISPCapitalIcon = ({ className }: { className?: string }) => (
-  <div className="h-48 w-48">
+  <div className="h-32 w-32 md:h-40 md:w-40 lg:h-48 lg:w-48">
     <Lottie 
       animationData={onlineBankingAnimation} 
       loop={true}
@@ -164,13 +164,13 @@ const features = [
 
 const Features = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 md:py-20 lg:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-black mb-4">
+        <div className="text-center mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-black mb-3 md:mb-4 px-4">
             Everything You Need to <span className="text-[#FFC300]">Succeed</span>
           </h2>
-          <p className="text-lg text-black max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-black max-w-2xl mx-auto px-4">
             Six powerful features designed to build your credibility, sharpen your skills, and connect you with investors. Each one directly impacts your 0-100 OMISP Score.
           </p>
         </div>
