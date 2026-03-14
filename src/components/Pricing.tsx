@@ -1,14 +1,13 @@
-import { Button } from "@/components/ui/button";
-import { Check, Building2 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Building2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { PricingCard, PricingCardProps } from "@/components/ui/animated-glassy-pricing";
 
-const founderPlans = [
+const founderPlans: PricingCardProps[] = [
   {
-    name: "Founder",
-    tier: "Free",
-    price: "$0",
-    period: "/month",
+    planName: "Founder",
+    description: "Perfect for getting started",
+    price: "0",
     features: [
       "2 Pitch sessions/month",
       "1 Financial model/month",
@@ -16,14 +15,14 @@ const founderPlans = [
       "50 Omi conversations",
       "Basic OMISP Score",
     ],
-    cta: "Start Free",
-    popular: false,
+    buttonText: "Start Free",
+    isPopular: false,
+    buttonVariant: "secondary",
   },
   {
-    name: "Strategist",
-    tier: "Pro",
-    price: "$39",
-    period: "/month",
+    planName: "Strategist",
+    description: "For serious founders",
+    price: "39",
     features: [
       "Unlimited pitch sessions",
       "Unlimited financial models",
@@ -33,14 +32,14 @@ const founderPlans = [
       "OMISP Capital eligibility",
       "Progress tracking & analytics",
     ],
-    cta: "Go Pro",
-    popular: true,
+    buttonText: "Go Pro",
+    isPopular: true,
+    buttonVariant: "primary",
   },
   {
-    name: "Unicorn Builder",
-    tier: "Premium",
-    price: "$99",
-    period: "/month",
+    planName: "Unicorn Builder",
+    description: "Premium features for growth",
+    price: "99",
     features: [
       "Everything in Pro",
       "Guaranteed VC visibility",
@@ -50,17 +49,17 @@ const founderPlans = [
       "VC introduction facilitation",
       "Premium community access",
     ],
-    cta: "Go Premium",
-    popular: false,
+    buttonText: "Go Premium",
+    isPopular: false,
+    buttonVariant: "primary",
   },
 ];
 
-const vcPlans = [
+const vcPlans: PricingCardProps[] = [
   {
-    name: "Partner",
-    tier: "Free",
-    price: "$0",
-    period: "/month",
+    planName: "Partner",
+    description: "Discover top founders",
+    price: "0",
     features: [
       "Weekly 'Top 10 Founders' pop-up",
       "Basic founder feed (top 50)",
@@ -68,14 +67,14 @@ const vcPlans = [
       "Basic filtering by industry",
       "Monthly digest email",
     ],
-    cta: "Get Started",
-    popular: false,
+    buttonText: "Get Started",
+    isPopular: false,
+    buttonVariant: "secondary",
   },
   {
-    name: "Standard",
-    tier: "Pro",
-    price: "$499",
-    period: "/month",
+    planName: "Standard",
+    description: "Full investment insights", 
+    price: "499",
     features: [
       "All Partner features",
       "Full OMISP profiles (6 dimensions)",
@@ -85,14 +84,14 @@ const vcPlans = [
       "Monthly top founders report",
       "Priority support",
     ],
-    cta: "Upgrade",
-    popular: true,
+    buttonText: "Upgrade",
+    isPopular: true,
+    buttonVariant: "primary",
   },
   {
-    name: "Premium",
-    tier: "Enterprise",
-    price: "$1,499",
-    period: "/month",
+    planName: "Premium",
+    description: "Enterprise-grade access",
+    price: "1,499",
     features: [
       "All Standard features",
       "48-hour exclusive first look",
@@ -102,69 +101,39 @@ const vcPlans = [
       "Dedicated success manager",
       "API access & integrations",
     ],
-    cta: "Contact Sales",
-    popular: false,
+    buttonText: "Contact Sales",
+    isPopular: false,
+    buttonVariant: "primary",
   },
 ];
 
-const PlanGrid = ({ plans }: { plans: typeof founderPlans }) => (
-  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
-    {plans.map((plan, index) => (
-      <div
-      key={index}
-        className={`relative bg-card rounded-2xl border ${
-          plan.popular ? "border-primary shadow-xl shadow-primary/10" : "border-border"
-        } p-6 md:p-8`}
-      >
-        {plan.popular && (
-          <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-primary text-primary-foreground text-sm font-medium rounded-full">
-            Most Popular
-          </div>
-        )}
-
-        <div className="mb-6">
-          <p className="text-muted-foreground text-sm mb-1">{plan.name}</p>
-          <p className="text-xl font-semibold text-foreground mb-4">{plan.tier}</p>
-          <div className="flex items-baseline">
-            <span className="text-4xl font-bold text-foreground">{plan.price}</span>
-            <span className="text-muted-foreground">{plan.period}</span>
-          </div>
-        </div>
-
-        <ul className="space-y-3 mb-8">
-          {plan.features.map((feature, fi) => (
-            <li key={fi} className="flex items-start gap-2">
-              <Check className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <span className="text-muted-foreground">{feature}</span>
-            </li>
-          ))}
-        </ul>
-
-        <Link to="/signup">
-          <Button className="w-full" variant={plan.popular ? "default" : "outline"}>
-            {plan.cta}
-          </Button>
-        </Link>
-      </div>
-    ))}
-  </div>
-);
-
 const Pricing = () => {
+  const navigate = useNavigate();
+  
+  const founderPlansWithNavigation = founderPlans.map(plan => ({
+    ...plan,
+    onButtonClick: () => navigate("/signup")
+  }));
+  
+  const vcPlansWithNavigation = vcPlans.map(plan => ({
+    ...plan,
+    onButtonClick: () => navigate(plan.planName === "Premium" ? "/contact" : "/signup")
+  }));
+
   return (
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4 md:px-6">
+    <section className="py-20 bg-background relative min-h-screen">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4 font-tanker">
             Choose Your Plan
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-tanker">
             Plans for founders building the future and VCs discovering them.
           </p>
         </div>
 
-        <Tabs defaultValue="founders" className="max-w-5xl mx-auto">
-          <TabsList className="grid w-full max-w-xs mx-auto grid-cols-2 mb-8 md:mb-10">
+        <Tabs defaultValue="founders" className="max-w-6xl mx-auto">
+          <TabsList className="grid w-full max-w-xs mx-auto grid-cols-2 mb-12 md:mb-14">
             <TabsTrigger value="founders">For Founders</TabsTrigger>
             <TabsTrigger value="vcs" className="gap-1">
               <Building2 className="w-4 h-4" />
@@ -173,11 +142,19 @@ const Pricing = () => {
           </TabsList>
 
           <TabsContent value="founders">
-            <PlanGrid plans={founderPlans} />
+            <div className="flex flex-col md:flex-row gap-8 md:gap-6 justify-center items-center w-full">
+              {founderPlansWithNavigation.map((plan) => (
+                <PricingCard key={plan.planName} {...plan} />
+              ))}
+            </div>
           </TabsContent>
 
           <TabsContent value="vcs">
-            <PlanGrid plans={vcPlans} />
+            <div className="flex flex-col md:flex-row gap-8 md:gap-6 justify-center items-center w-full">
+              {vcPlansWithNavigation.map((plan) => (
+                <PricingCard key={plan.planName} {...plan} />
+              ))}
+            </div>
           </TabsContent>
         </Tabs>
       </div>

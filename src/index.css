@@ -98,6 +98,9 @@
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
+    
+    /* Ripple button colors */
+    --button-ripple-color: rgba(0, 0, 0, 0.3);
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
@@ -142,6 +145,9 @@
     --sidebar-accent-foreground: 240 4.8% 95.9%;
     --sidebar-border: 240 3.7% 15.9%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    
+    /* Ripple button colors */
+    --button-ripple-color: rgba(255, 255, 255, 0.5);
   }
 }
 
@@ -180,5 +186,48 @@
 
   .score-bar-fill {
     @apply h-full rounded-full bg-primary transition-all duration-500;
+  }
+}
+
+@layer utilities {
+  .animated-text {
+    background: radial-gradient(
+      circle at var(--text-mouse-x) var(--text-mouse-y),
+      var(--gradient-text-center) 0%,
+      var(--gradient-text-edge) 40%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .radial-gradient-bg {
+    background: radial-gradient(
+      circle at 50% 50%,
+      var(--gradient-center) 0%,
+      var(--gradient-edge) 100%
+    );
+  }
+
+  .rounded-xs {
+    border-radius: 0.375rem;
+  }
+
+  .newFont {
+    font-family: 'Tanker', sans-serif;
+  }
+
+  .animate-marquee {
+    animation: marquee var(--duration) linear infinite;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
   }
 }
