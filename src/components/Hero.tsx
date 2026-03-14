@@ -77,7 +77,7 @@ const Hero = () => {
                   </span>
                 </h1>
 
-                <p className="text-xs md:text-sm lg:text-base leading-relaxed text-white max-w-2xl text-center mt-2" style={{ fontFamily: 'Lora, serif' }}>
+                <p className="text-xs md:text-sm lg:text-base leading-relaxed text-white max-w-2xl text-center mt-2" style={{ fontFamily: 'Tanker, sans-serif' }}>
                   Stop guessing and start winning. OMISP transforms your raw potential into AI-validated credibility that top-tier VCs can't ignore.
                 </p>
               </div>

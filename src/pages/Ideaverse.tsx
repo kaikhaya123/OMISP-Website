@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, Search, Plus, MessageSquare, Heart, Share2, Bookmark, Filter, TrendingUp, Users, Lightbulb, Sparkles, MapPin, Brain, Loader2, Zap } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Header } from "@/components/ui/header-2";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -226,38 +227,7 @@ const Ideaverse = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-            </Link>
-            <div>
-              <h1 className="text-xl font-bold text-foreground flex items-center gap-2">
-                Ideaverse Hub
-                <Badge className="bg-gradient-to-r from-primary to-accent text-white border-0">
-                  <Zap className="w-3 h-3 mr-1" />
-                  AI Insights
-                </Badge>
-              </h1>
-              <p className="text-sm text-muted-foreground">Connect with founders worldwide</p>
-            </div>
-          </div>
-          <Dialog open={isCreateOpen} onOpenChange={setIsCreateOpen}>
-            <DialogTrigger asChild>
-              <Button className="gap-2">
-                <Plus className="w-4 h-4" />
-                New Post
-              </Button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-lg">
-              <DialogHeader>
-                <DialogTitle>Create a Post</DialogTitle>
-                <DialogDescription>Share an idea, ask for feedback, or connect with co-founders.</DialogDescription>
-              </DialogHeader>
-              <div className="space-y-4 py-4">
-                <div className="space-y-2">
-                  <Label>Post Type</Label>
+      <Header />
                   <Select value={newPost.type} onValueChange={(v) => setNewPost({ ...newPost, type: v as Post["type"] })}>
                     <SelectTrigger>
                       <SelectValue />

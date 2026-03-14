@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, Plus, Download, TrendingUp, DollarSign, Users, Package, Trash2, Sparkles, Loader2, Brain, Lightbulb, AlertTriangle, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Header } from "@/components/ui/header-2";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -159,44 +160,7 @@ const RevenueArchitect = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Header */}
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-            </Link>
-            <div>
-              <h1 className="text-xl font-bold text-foreground flex items-center gap-2">
-                AI Revenue Architect
-                <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0">
-                  <Brain className="w-3 h-3 mr-1" />
-                  Smart Modeling
-                </Badge>
-              </h1>
-              <p className="text-sm text-muted-foreground">Build investor-ready financial models with AI insights</p>
-            </div>
-          </div>
-          <div className="flex gap-2">
-            <Button 
-              onClick={runAIAnalysis} 
-              disabled={isAnalyzing}
-              className="gap-2 bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90"
-            >
-              {isAnalyzing ? (
-                <Loader2 className="w-4 h-4 animate-spin" />
-              ) : (
-                <Sparkles className="w-4 h-4" />
-              )}
-              {isAnalyzing ? "Analyzing..." : "AI Analysis"}
-            </Button>
-            <Button variant="outline" size="sm">
-              <Download className="w-4 h-4 mr-2" />
-              Export
-            </Button>
-          </div>
-        </div>
-      </header>
+      <Header />
 
       <main className="container mx-auto px-4 py-8">
         {/* AI Insights Banner */}

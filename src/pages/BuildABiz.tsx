@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { ArrowLeft, Play, RotateCcw, TrendingUp, TrendingDown, Users, DollarSign, Zap, AlertTriangle, CheckCircle, Clock, Sparkles, Brain, Lightbulb, Loader2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Header } from "@/components/ui/header-2";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
@@ -233,31 +234,7 @@ const BuildABiz = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-            </Link>
-            <div>
-              <h1 className="text-xl font-bold text-foreground flex items-center gap-2">
-                Build-a-Biz Game
-                <Badge className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0">
-                  <Zap className="w-3 h-3 mr-1" />
-                  AI Mentor
-                </Badge>
-              </h1>
-              <p className="text-sm text-muted-foreground">Startup simulation with AI guidance</p>
-            </div>
-          </div>
-          {gameStarted && (
-            <Button variant="outline" size="sm" onClick={startGame}>
-              <RotateCcw className="w-4 h-4 mr-2" />
-              Restart
-            </Button>
-          )}
-        </div>
-      </header>
+      <Header />
 
       <main className="container mx-auto px-4 py-8">
         {!gameStarted ? (

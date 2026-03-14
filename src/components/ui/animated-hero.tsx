@@ -62,7 +62,7 @@ function AnimatedHero() {
                 </span>
               </h1>
 
-              <p className="text-base md:text-lg lg:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-xl">
+              <p className="text-base md:text-lg lg:text-xl leading-relaxed tracking-tight text-muted-foreground max-w-xl font-tanker">
                 Stop guessing and start winning. OMISP transforms your raw potential into AI-validated credibility that top-tier VCs can't ignore. Build your score, prove your execution, and secure your round—before your competitors do.
               </p>
             </div>

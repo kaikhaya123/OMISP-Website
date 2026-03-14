@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { ArrowLeft, Send, User, Bot, Sparkles, Brain, TrendingUp, Eye, Target, Users, Lightbulb, Zap, Info } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Header } from "@/components/ui/header-2";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -267,36 +268,7 @@ const OmiChat = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {/* Header */}
-      <header className="border-b border-border bg-card/50 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-4">
-            <Link to="/dashboard" className="text-muted-foreground hover:text-foreground transition-colors">
-              <ArrowLeft className="w-5 h-5" />
-            </Link>
-            <div>
-              <h1 className="text-xl font-bold text-foreground flex items-center gap-2">
-                Omi Chat
-                <Badge className="bg-gradient-to-r from-primary to-accent text-white border-0">
-                  <Zap className="w-3 h-3 mr-1" />
-                  Context-Aware AI
-                </Badge>
-              </h1>
-              <p className="text-sm text-muted-foreground">AI advisors with full knowledge of your business</p>
-            </div>
-          </div>
-          {context?.scores && (
-            <div className="hidden md:flex items-center gap-3 text-sm">
-              <div className="px-3 py-1.5 rounded-full bg-primary/10 text-primary font-medium">
-                OMISP: {context.scores.totalScore}/100
-              </div>
-              <div className="px-3 py-1.5 rounded-full bg-muted text-muted-foreground">
-                MRR: ${context.profile?.mrr_usd?.toLocaleString() ?? 0}
-              </div>
-            </div>
-          )}
-        </div>
-      </header>
+      <Header />
 
       <div className="flex-1 container mx-auto px-4 py-6 flex gap-6 max-h-[calc(100vh-80px)]">
         {/* Persona Selector */}
