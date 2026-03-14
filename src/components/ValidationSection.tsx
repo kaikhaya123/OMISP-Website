@@ -62,7 +62,7 @@ const ValidationSection = () => {
               {differentiators.map((item) => (
                 <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
                   <Shield className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <p className="text-sm text-black">{item}</p>
+                  <p className="text-sm text-white/80">{item}</p>
                 </div>
               ))}
             </div>
@@ -85,7 +85,7 @@ const ValidationSection = () => {
                   <div>
                     <div className="text-xs uppercase tracking-[0.25em] text-primary/80 mb-2">Step 0{index + 1}</div>
                     <h3 className="text-2xl font-semibold mb-2">{step.title}</h3>
-                    <p className="text-black/75 leading-relaxed">{step.copy}</p>
+                    <p className="text-white/75 leading-relaxed">{step.copy}</p>
                   </div>
                 </div>
               </div>
