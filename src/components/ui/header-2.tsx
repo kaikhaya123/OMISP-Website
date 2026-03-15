@@ -193,7 +193,7 @@ export function Header() {
 						muted
 						playsInline
 						className="absolute inset-0 w-full h-full object-cover"
-						src="/Videos/3248994-uhd_3840_2160_25fps.mp4"
+						src="/Videos/0_Business_Meeting_Presentation_1080x1920 (1).mp4"
 					/>
 					{/* Video Overlay */}
 					<div className="absolute inset-0 bg-black/75" />
@@ -266,7 +266,7 @@ export function Header() {
 									onClick={() => setOpen(false)}
 									className="mt-4 md:mt-4"
 								>
-									<Button size="default" className="font-tanker text-lg md:text-lg lg:text-xl px-9 md:px-10 py-5 md:py-5 bg-primary hover:bg-primary/90 text-white shadow-lg">
+									<Button size="default" className="font-tanker text-lg md:text-lg lg:text-xl px-9 md:px-10 py-5 md:py-5 bg-[#FF8225]hover:bg-[#FF8225] text-black shadow-lg">
 										GET STARTED
 									</Button>
 								</Link>

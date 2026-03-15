@@ -110,9 +110,9 @@ function ScrambleButton({ text, onClick, variant = "primary", className, icon }:
     }, 30);
   };
 
-  const baseStyles = "px-4 md:px-6 lg:px-8 py-2.5 md:py-3 rounded-full font-semibold transition-colors flex items-center gap-2 border-2 border-black text-sm md:text-base";
+  const baseStyles = "px-4 md:px-6 lg:px-8 py-2.5 md:py-3 rounded-full font-semibold font-tanker transition-colors flex items-center gap-2 border-2 border-black text-sm md:text-base";
   const variantStyles = variant === "primary" 
-    ? "bg-primary text-black hover:bg-primary/90" 
+    ? "bg-white text-black hover:bg-primary/90" 
     : "border-2 border-foreground text-foreground hover:bg-foreground hover:text-background";
 
   return (
@@ -144,7 +144,7 @@ export function CTAWithMarquee({
   onSecondaryClick,
 }: CTAWithMarqueeProps) {
   return (
-    <div className="min-h-[500px] md:min-h-[600px] bg-[#FFC300] text-black flex items-center overflow-hidden relative py-16 md:py-20">
+    <div className="min-h-[500px] md:min-h-[600px] bg-[#FF8225] text-black flex items-center overflow-hidden relative py-16 md:py-20">
       <div className="container mx-auto px-4 md:px-6 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Left Content */}

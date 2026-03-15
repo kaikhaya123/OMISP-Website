@@ -175,30 +175,30 @@ export const PricingCard = ({
     ${isPopular ? 'scale-105 relative ring-2 ring-primary/20 dark:from-white/20 dark:to-white/10 dark:border-primary/30 shadow-2xl' : ''}
   `;
   const buttonClasses = `
-    mt-auto w-full py-2.5 md:py-3 rounded-xl font-semibold text-sm md:text-base lg:text-[14px] transition font-tanker
-    ${buttonVariant === 'primary' 
-      ? 'bg-primary hover:bg-primary/90 text-black' 
-      : 'bg-black/10 hover:bg-black/20 text-black border border-black/20'
-    }
-  `;
+  mt-auto w-full py-2.5 md:py-3 rounded-xl font-semibold text-sm md:text-base lg:text-[14px] transition font-tanker !text-black
+  ${buttonVariant === 'primary' 
+    ? 'bg-white hover:bg-gray-100' 
+    : 'bg-white hover:bg-gray-200 border border-black'
+  }
+`;
 
   return (
     <div className={cardClasses.trim()}>
       {isPopular && (
-        <div className="absolute -top-3 md:-top-4 right-3 md:right-4 px-2 md:px-3 py-1 text-xs md:text-[12px] font-semibold rounded-full bg-primary text-white font-tanker">
+        <div className="absolute -top-3 md:-top-4 right-3 md:right-4 px-2 md:px-3 py-1 text-xs md:text-[12px] font-semibold rounded-full bg-primary text-black font-tanker">
           Most Popular
         </div>
       )}
       <div className="mb-3">
         <h2 className="text-3xl md:text-4xl lg:text-[48px] font-extralight tracking-[-0.03em] text-black font-tanker leading-tight">{planName}</h2>
-        <p className="text-sm md:text-base lg:text-[16px] text-black/70 mt-1 font-tanker">{description}</p>
+        <p className="text-sm md:text-base lg:text-[16px] text-black mt-1 font-tanker">{description}</p>
       </div>
       <div className="my-4 md:my-6 flex items-baseline gap-2">
         <span className="text-3xl md:text-4xl lg:text-[48px] font-extralight text-black font-tanker">${price}</span>
-        <span className="text-xs md:text-sm lg:text-[14px] text-black/70 font-tanker">/mo</span>
+        <span className="text-xs md:text-sm lg:text-[14px] text-black font-tanker">/mo</span>
       </div>
       <div className="card-divider w-full mb-4 md:mb-5 h-px bg-[linear-gradient(90deg,transparent,rgba(0,0,0,0.1)_50%,transparent)] dark:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.09)_20%,rgba(255,255,255,0.22)_50%,rgba(255,255,255,0.09)_80%,transparent)]"></div>
-      <ul className="flex flex-col gap-2 text-xs md:text-sm lg:text-[14px] text-black/90 mb-4 md:mb-6 font-tanker">
+      <ul className="flex flex-col gap-2 text-xs md:text-sm lg:text-[14px] text-black mb-4 md:mb-6 font-tanker">
         {features.map((feature, index) => (
           <li key={index} className="flex items-start gap-2 leading-relaxed">
             <CheckIcon className="text-black w-4 h-4 mt-0.5 flex-shrink-0" /> 
