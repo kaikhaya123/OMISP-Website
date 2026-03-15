@@ -266,7 +266,7 @@ export function Header() {
 									onClick={() => setOpen(false)}
 									className="mt-4 md:mt-4"
 								>
-									<Button size="default" className="font-tanker text-lg md:text-lg lg:text-xl px-9 md:px-10 py-5 md:py-5 bg-[#FF8225]hover:bg-[#FF8225] text-black shadow-lg">
+									<Button size="default" className="font-tanker text-lg md:text-lg lg:text-xl px-9 md:px-10 py-5 md:py-5 bg-[#FF8225] hover:bg-[#FF8225] text-black shadow-lg">
 										GET STARTED
 									</Button>
 								</Link>
