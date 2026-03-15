@@ -39,12 +39,12 @@ const Hero = () => {
         />
         
         {/* Overlay for better text readability */}
-        <div className="absolute inset-0 -top-20 bottom-0 bg-black/40 z-0" />
+        <div className="absolute inset-0 -top-20 bottom-0 bg-black/45  z-0" />
         
         {/* Content Container */}
-        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-16 relative z-10 py-8 md:py-12 h-full">
+       <div className="max-w-md mt-[35vh] ml-4 sm:ml-6 md:ml-12 lg:ml-16">
           {/* Bottom-left positioned content */}
-          <div className="absolute bottom-1 left-4 sm:left-6 md:left-12 lg:left-16 max-w-md">
+          <div className="absolute bottom-5 left-4 sm:left-6 md:left-12 lg:left-16 max-w-md">
             
             {/* Headline Section - Left-aligned */}
             <div className="flex gap-4 md:gap-6 flex-col text-left w-full">
