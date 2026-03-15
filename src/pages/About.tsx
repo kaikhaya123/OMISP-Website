@@ -38,7 +38,7 @@ const AboutPage = () => {
       
       <main className="">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-orange-50 to-amber-50 dark:from-orange-950/20 dark:to-amber-900/20 overflow-hidden min-h-screen flex items-center">
+        <section className="relative bg-[#FFF8DC] overflow-hidden min-h-screen flex items-center">
           <div className="container mx-auto px-4 md:px-6 py-16 md:py-24">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
@@ -49,7 +49,7 @@ const AboutPage = () => {
                 className="space-y-6"
               >
                 <h1 className="text-black text-4xl md:text-5xl lg:text-6xl font-tanker font-bold leading-tight">
-                  The Credit Score for <span className="font-tanker text-primary">Founders</span>
+                  The Credit Score for <span className="font-tanker text-black">Founders</span>
                 </h1>
                 <p className="text-lg text-black leading-relaxed max-w-xl">
                   For too long, venture capital has relied on warm introductions and prestigious 
@@ -57,7 +57,7 @@ const AboutPage = () => {
                   provides a standardized way to build, track, and prove your credibility.
                 </p>
                 <Link to="/signup">
-                  <Button size="lg" className="bg-primary hover:bg-primary/90 text-white font-tanker text-base px-8 py-6">
+                  <Button size="lg" className="bg-[#FF8225]  hover:bg-primary/90 text-black font-tanker text-base px-8 py-6">
                     Get Started
                   </Button>
                 </Link>
@@ -96,7 +96,7 @@ const AboutPage = () => {
         </section>
 
         {/* Platform Features Section */}
-        <section className="py-20 bg-black">
+        <section className="py-20 bg-[#FF8225]">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -105,11 +105,11 @@ const AboutPage = () => {
               transition={{ duration: 0.6 }}
               className="text-center mb-16"
             >
-              <p className="text-sm font-tanker text-primary mb-2 uppercase tracking-wide">OMISP Platform</p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-tanker font-bold text-white mb-4">
+              <p className="text-sm font-tanker text-white mb-2 uppercase tracking-wide">OMISP Platform</p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-tanker font-bold text-black mb-4">
                 Infrastructure for the next<br />generation of founders
               </h2>
-              <p className="text-lg text-white max-w-3xl mx-auto leading-relaxed">
+              <p className="text-lg text-black max-w-3xl mx-auto leading-relaxed">
                 OMISP combines AI-powered strategic training with real-world milestone tracking, 
                 giving VCs a data-driven way to discover high-potential founders and founders 
                 a clear path to becoming investor-ready. Build credibility, connect with capital, 
@@ -131,7 +131,7 @@ const AboutPage = () => {
                   <div className="flex items-center justify-center mx-auto">
                     <img src={feature.icon} alt={feature.title} className="w-16 h-16" />
                   </div>
-                  <h3 className="text-xl font-tanker font-semibold text-white">{feature.title}</h3>
+                  <h3 className="text-xl font-tanker font-semibold text-black">{feature.title}</h3>
                   <p className="text-sm text-white leading-relaxed">{feature.description}</p>
                 </motion.div>
               ))}
@@ -140,7 +140,7 @@ const AboutPage = () => {
         </section>
 
         {/* Founder Story Section */}
-        <section className="py-20 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-950/20 dark:to-orange-900/20">
+        <section className="py-20 bg-[#FFF8DC]">
           <div className="container mx-auto px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -149,7 +149,7 @@ const AboutPage = () => {
               transition={{ duration: 0.6 }}
               className="max-w-4xl mx-auto"
             >
-              <p className="text-sm font-tanker text-primary mb-2 uppercase tracking-wide">Our Story</p>
+              <p className="text-sm font-tanker text-black mb-2 uppercase tracking-wide">Our Story</p>
               <h2 className="text-3xl md:text-4xl font-tanker font-bold text-black mb-6">
                 How OMISP came about
               </h2>
