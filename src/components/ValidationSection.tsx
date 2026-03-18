@@ -107,18 +107,18 @@ const ValidationSection = () => {
           {/* Steps — full-width 3-column horizontal row */}
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {steps.map((step, index) => (
-              <div key={step.title} className="flex flex-col items-center text-center  bg-[#FFF8DC] p-8">
+              <div key={step.title} className="flex flex-col items-center text-center  bg-[#FFF8DC]">
                 <ImageIconPlaceholder src={step.imageSrc} alt={step.title} className="mb-4 h-14 w-14 shrink-0" />
                 <div className="mb-2 text-xs uppercase tracking-[0.25em] text-[#FF8225] font-semibold">Step 0{index + 1}</div>
                 <h3 className="mb-3 text-xl font-bold font-tanker">{step.title}</h3>
-                <p className="leading-relaxed text-black/70 text-sm">{step.copy}</p>
+                <p className="leading-relaxed text-black text-sm">{step.copy}</p>
               </div>
             ))}
           </div>
 
           {/* Investor trust card */}
           <div className="flex h-full flex-col rounded-3xl p-6 text-black">
-              <div className="mt-6 h-[28rem] md:h-[34rem] lg:h-[40rem] w-full rounded-2xl bg-white/25 p-2 md:p-3">
+              <div className="mt-6 h-[28rem] md:h-[34rem] lg:h-[40rem] w-full rounded-2xl bg-[#FFF8DC] p-2 md:p-3">
                 <Lottie animationData={gadgetsAnimation} loop className="h-full w-full" />
               </div>
 
@@ -126,7 +126,7 @@ const ValidationSection = () => {
                 <ImageIconPlaceholder src="/Icons/trustworthiness.png" alt="Investor trust compounds faster" className="h-12 w-12 shrink-0" />
                 <h3 className="text-xl font-semibold">Investor trust compounds faster</h3>
               </div>
-              <p className="text-black/75 text-center">
+              <p className="text-black text-center">
                 Once founders have verified milestones and stronger score quality, OMISP can surface them through reports,
                 discovery feeds, watchlists, and intro workflows.
               </p>
@@ -134,7 +134,7 @@ const ValidationSection = () => {
               <div className="mt-6 flex flex-col items-center text-center gap-2">
                 <ImageIconPlaceholder src="/Icons/validation.png" alt="Validation is part of the product" className="h-10 w-10 shrink-0" />
                 <h3 className="text-xl font-semibold font-tanker">Validation is part of the product</h3>
-                <p className="text-black/75">Not an afterthought.</p>
+                <p className="text-black">Not an afterthought.</p>
               </div>
             </div>
 
