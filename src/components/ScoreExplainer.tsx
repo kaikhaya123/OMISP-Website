@@ -65,7 +65,7 @@ const thresholdItems = [
     status: 'Building',
   },
   {
-    img: '/Images/Leadership Illustration.png',
+    img: '/Images/taylor-nicole-qH7nLsK_IjE-unsplash.jpg',
     title: '50-69',
     desc: 'Emerging traction. Strong enough to attract early investor attention.',
     sliderName: 'emerging',

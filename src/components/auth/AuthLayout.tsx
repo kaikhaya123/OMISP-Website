@@ -26,8 +26,9 @@ export const AuthSidePanel = ({ accentClass = "bg-primary", headline, subheadlin
         style={{
           backgroundImage: `url("${backgroundImage}")`,
           backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundPosition: 'center center',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'local'
         }}
       />
     </AnimatePresence>
@@ -46,9 +47,9 @@ export const AuthSidePanel = ({ accentClass = "bg-primary", headline, subheadlin
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.1 }}
       >
-        <Link to="/" className="flex items-center gap-3 w-fit">
-          <img src="/logo/Omisp.png" alt="OMISP" className="w-9 h-9 object-contain" />
-          <span className="font-tanker font-bold text-lg tracking-tight text-white">OMISP</span>
+        <Link to="/" className="absolute top-4 left-4 flex items-center gap-3 p-1">
+          <img src="/logo/Omisp.png" alt="OMISP" className="w-11 h-11 md:w-12 md:h-12 object-contain" />
+          <span className="font-tanker font-bold text-xl md:text-2xl tracking-tight text-white">OMISP</span>
         </Link>
       </motion.div>
 
@@ -92,9 +93,9 @@ export const AuthShell = ({ children, sidePanel }: AuthShellProps) => (
         className="w-full max-w-[420px]"
       >
         {/* Mobile logo */}
-        <Link to="/" className="lg:hidden flex items-center justify-center gap-2 mb-8 mx-auto w-fit">
-          <img src="/logo/Omisp.png" alt="OMISP" className="w-8 h-8 object-contain" />
-          <span className="font-tanker font-bold text-base text-foreground">OMISP</span>
+        <Link to="/" className="lg:hidden absolute top-4 left-4 flex items-center justify-center gap-2 w-fit">
+          <img src="/logo/Omisp.png" alt="OMISP" className="w-9 h-9 md:w-10 md:h-10 object-contain" />
+          <span className="font-tanker font-bold text-lg md:text-xl text-white">OMISP</span>
         </Link>
         {children}
       </motion.div>

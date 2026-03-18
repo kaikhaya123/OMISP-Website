@@ -126,7 +126,7 @@ const Navbar = () => {
           {/* Mobile menu button */}
           <button
             type="button"
-            className="inline-flex items-center p-2 w-9 h-9 md:w-10 md:h-10 justify-center rounded-lg md:hidden hover:bg-muted focus:outline-none focus:ring-2 focus:ring-ring bg-black shadow-md border border-gray-800"
+            className="inline-flex items-center p-2 w-9 h-9 md:w-10 md:h-10 justify-center rounded-lg md:hidden hover:bg-muted focus:outline-none focus:ring-2 focus:ring-ring bg-primary text-white shadow-md border border-primary/30"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-controls="navbar-user"
             aria-expanded={mobileMenuOpen}

@@ -31,7 +31,7 @@ const SIDE_CONTENT: Record<Role, {
       { icon: Target, text: "Unlock improvement insights" },
       { icon: Rocket, text: "Stay visible on VC leaderboards" },
     ],
-    backgroundImage: "/Images/Blue Piggy Bank.png",
+    backgroundImage: "/Images/pexels-karola-g-7680633.jpg",
   },
   vc: {
     accent: "bg-foreground",
@@ -42,7 +42,7 @@ const SIDE_CONTENT: Record<Role, {
       { icon: Target, text: "Saved search filters & alerts" },
       { icon: TrendingUp, text: "Portfolio founder tracking" },
     ],
-    backgroundImage: "/Images/2009.i518.001_crowdfunding_set-07.jpg",
+    backgroundImage: "/Images/pexels-thirdman-7652301.jpg",
   },
 };
 
@@ -58,7 +58,16 @@ const Login = () => {
   const isFounder = role === "founder";
   const side = SIDE_CONTENT[role];
 
-  // If already authenticated, redirect without requiring sign-in again
+  const sidePanel = (
+    <AuthSidePanel
+      accentClass={side.accent}
+      headline={side.headline}
+      subheadline={side.sub}
+      bullets={side.bullets}
+      backgroundImage={side.backgroundImage}
+    />
+  );
+
   useEffect(() => {
     if (authLoading || roleLoading) return;
     if (!user) return;
@@ -70,6 +79,7 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+
     const { data, error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) {
       toast({ title: "Login failed", description: error.message, variant: "destructive" });
@@ -77,21 +87,21 @@ const Login = () => {
       return;
     }
 
-    // Read persisted role from profiles table
     const { data: profileData } = await supabase.from("profiles")
       .select("role")
       .eq("id", data.user.id)
       .maybeSingle();
 
-    const userRole: string | undefined = profileData?.role ?? data.user?.user_metadata?.role;
+    const persistedRole: string | undefined = profileData?.role ?? data.user?.user_metadata?.role;
 
-    if (!userRole) {
+    if (!persistedRole) {
       navigate("/choose-role");
-    } else if (userRole === "investor" || userRole === "vc") {
+    } else if (persistedRole === "investor" || persistedRole === "vc") {
       navigate("/vc-dashboard");
     } else {
       navigate("/dashboard");
     }
+
     setLoading(false);
   };
 
@@ -100,112 +110,84 @@ const Login = () => {
     if (error) toast({ title: "Google sign-in failed", description: String(error), variant: "destructive" });
   };
 
-  const sidePanel = (
-    <AnimatePresence mode="wait">
-      <motion.div
-        key={role}
-        initial={{ opacity: 0, x: -20 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: 20 }}
-        transition={{ 
-          duration: 0.5,
-          ease: [0.43, 0.13, 0.23, 0.96]
-        }}
-        className="contents"
-      >
-        <AuthSidePanel
-          accentClass={side.accent}
-          headline={side.headline}
-          subheadline={side.sub}
-          bullets={side.bullets}
-          backgroundImage={side.backgroundImage}
-        />
-      </motion.div>
-    </AnimatePresence>
-  );
-
   return (
-    <AuthShell sidePanel={sidePanel}>
-      {/* Role toggle */}
-      <div className="flex bg-muted rounded-xl p-1 mb-8 gap-1">
-        {(["founder", "vc"] as Role[]).map((r) => (
-          <button
-            key={r}
-            onClick={() => setRole(r)}
-            className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-tanker font-medium transition-all duration-300 ease-in-out ${
-              role === r ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
-            }`}
+    <div className="min-h-screen bg-[#FFF8DC] text-white">
+      <AuthShell sidePanel={sidePanel}>
+        <div className="flex bg-muted rounded-xl p-1 mb-8 gap-1">
+          {(["founder", "vc"] as Role[]).map((r) => (
+            <button
+              key={r}
+              onClick={() => setRole(r)}
+              className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-tanker font-medium transition-all duration-300 ease-in-out ${
+                role === r ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {r === "founder" ? <Rocket className="w-3.5 h-3.5 text-primary" /> : <BarChart3 className="w-3.5 h-3.5 text-secondary" />}
+              {r === "founder" ? "Founder" : "VC / Investor"}
+            </button>
+          ))}
+        </div>
+
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={role}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.4, ease: [0.43, 0.13, 0.23, 0.96] }}
           >
-            {r === "founder" ? <Rocket className="w-3.5 h-3.5" /> : <BarChart3 className="w-3.5 h-3.5" />}
-            {r === "founder" ? "Founder" : "VC / Investor"}
-          </button>
-        ))}
-      </div>
+            <h1 className="text-2xl font-tanker font-bold text-white mb-1">
+              {isFounder ? "Welcome back, builder" : "Welcome back, investor"}
+            </h1>
+            <p className="text-[#FF8225] text-sm font-tanker mb-7">
+              {isFounder
+                ? "Sign in to check your score and keep building momentum."
+                : "Sign in to explore the latest data-verified founders."}
+            </p>
+          </motion.div>
+        </AnimatePresence>
 
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={role}
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
-          transition={{ 
-            duration: 0.4,
-            ease: [0.43, 0.13, 0.23, 0.96]
-          }}
-        >
-          <h1 className="text-2xl font-tanker font-bold text-foreground mb-1">
-            {isFounder ? "Welcome back, builder" : "Welcome back, investor"}
-          </h1>
-          <p className="text-muted-foreground text-sm font-tanker mb-7">
-            {isFounder
-              ? "Sign in to check your score and keep building momentum."
-              : "Sign in to explore the latest data-verified founders."}
-          </p>
-        </motion.div>
-      </AnimatePresence>
-
-      <form onSubmit={handleSubmit} className="space-y-4">
-        <div className="space-y-1.5">
-          <Label htmlFor="email" className="font-tanker">Email address</Label>
-          <div className="relative">
-            <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground pointer-events-none" />
-            <Input
-              id="email" type="email"
-              placeholder={isFounder ? "founder@startup.com" : "partner@fund.com"}
-              className="pl-9 font-tanker"
-              value={email} onChange={(e) => setEmail(e.target.value)} required
-            />
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-1.5">
+            <Label htmlFor="email" className="font-tanker text-white">Email address</Label>
+            <div className="relative">
+              <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70 pointer-events-none" />
+              <Input
+                id="email"
+                type="email"
+                placeholder={isFounder ? "founder@startup.com" : "partner@fund.com"}
+                className="pl-9 font-tanker bg-white text-black border border-border focus:ring-primary"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
           </div>
-        </div>
 
-        <div className="space-y-1.5">
-          <div className="flex items-center justify-between">
-            <Label htmlFor="password" className="font-tanker">Password</Label>
-            <Link to="/forgot-password" className="text-xs text-primary hover:underline font-tanker font-medium">
-              Forgot password?
-            </Link>
+          <div className="space-y-1.5">
+            <div className="flex items-center justify-between">
+            <Label htmlFor="password" className="font-tanker text-white">Password</Label>
+              <Link to="/forgot-password" className="text-xs text-[#FF8225] hover:underline font-tanker font-medium">
+                Forgot password?
+              </Link>
+            </div>
+            <PasswordInput id="password" label="" value={password} onChange={setPassword} />
           </div>
-          <PasswordInput id="password" label="" value={password} onChange={setPassword} />
-        </div>
 
-        <Button
-          type="submit"
-          className="w-full gap-2 mt-1 bg-primary hover:bg-primary/90 text-white font-tanker"
-          disabled={loading}
-        >
-          {loading ? "Signing in…" : "Sign in"}
-          {!loading && <ArrowRight className="w-4 h-4" />}
-        </Button>
-      </form>
+          <Button type="submit" className="w-full gap-2 mt-1 bg-[#FF8225] hover:bg-[#FF8225] text-black font-tanker" disabled={loading}>
+            {loading ? "Signing in…" : "Sign in"}
+          </Button>
+        </form>
 
-      <AuthDivider />
-      <GoogleButton onClick={handleGoogle} />
+        <AuthDivider />
+        <GoogleButton onClick={handleGoogle} />
 
-      <p className="text-center text-sm text-muted-foreground font-tanker mt-6">
-        Don't have an account?{" "}
-        <Link to="/signup" className="text-primary font-tanker font-semibold hover:underline">Create one</Link>
-      </p>
-    </AuthShell>
+        <p className="text-center text-sm text-white font-tanker mt-6">
+          Don't have an account?{' '}
+          <Link to="/signup" className="text-[#FF8225] font-tanker font-semibold hover:underline">Create one</Link>
+        </p>
+      </AuthShell>
+    </div>
   );
 };
 
