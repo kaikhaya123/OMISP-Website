@@ -104,39 +104,6 @@ const ValidationSection = () => {
             </p>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-3">
-            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div className="mb-1 text-3xl font-bold text-primary">3-step</div>
-              <p className="text-sm text-black">submission to approval workflow</p>
-            </div>
-            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div className="mb-1 text-3xl font-bold text-primary">70+</div>
-              <p className="text-sm text-black">score unlocks VC discovery</p>
-            </div>
-            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div className="mb-1 text-3xl font-bold text-primary">Real</div>
-              <p className="text-sm text-black">proof drives ranking, not claims</p>
-            </div>
-          </div>
-
-          {/* Differentiators — 3 columns to fill the row */}
-          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
-            {differentiators.map((item) => (
-              <div key={item.copy} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-6">
-                <ImageIconPlaceholder src={item.imageSrc} alt={item.copy} className="mt-0.5 h-10 w-10 shrink-0" />
-                <p className="text-sm text-black">{item.copy}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA */}
-          <div className="flex justify-center">
-            <Button asChild className="bg-[#FF8225] text-black font-tanker hover:bg-primary/90">
-              <Link to="/capital">Explore OMISP Capital</Link>
-            </Button>
-          </div>
-
           {/* Steps + Trust card — two-column split */}
           <div className="grid items-stretch gap-4 lg:grid-cols-2">
 
@@ -176,6 +143,39 @@ const ValidationSection = () => {
               </div>
             </div>
 
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-3">
+            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-1 text-3xl font-bold text-primary font-tanker">3-step</div>
+              <p className="text-sm text-black font-tanker">submission to approval workflow</p>
+            </div>
+            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-1 text-3xl font-bold text-primary font-tanker">70+</div>
+              <p className="text-sm text-black font-tanker">score unlocks VC discovery</p>
+            </div>
+            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-1 text-3xl font-bold text-primary font-tanker">Real</div>
+              <p className="text-sm text-black font-tanker">proof drives ranking, not claims</p>
+            </div>
+          </div>
+
+          {/* Differentiators — 3 columns to fill the row */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {differentiators.map((item) => (
+              <div key={item.copy} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-6">
+                <ImageIconPlaceholder src={item.imageSrc} alt={item.copy} className="mt-0.5 h-10 w-10 shrink-0" />
+                <p className="text-sm text-black">{item.copy}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="flex justify-center">
+            <Button asChild className="bg-[#FF8225] text-black font-tanker hover:bg-primary/90">
+              <Link to="/capital">Explore OMISP Capital</Link>
+            </Button>
           </div>
         </div>
       </div>
