@@ -235,7 +235,7 @@ const AudienceSplitSection = () => {
                   <div className="">AI screening reports and faster diligence</div>
                 </div>
                 <div className="flex flex-col sm:flex-row gap-3">
-                  <Button asChild className="bg-white text- hover:bg-black/90">
+                  <Button asChild className="bg-white text-black hover:bg-black/90">
                     <Link to="/capital">
                       Explore for Investors
                       <ArrowRight className="w-4 h-4" />
