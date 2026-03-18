@@ -104,46 +104,39 @@ const ValidationSection = () => {
             </p>
           </div>
 
-          {/* Steps + Trust card — two-column split */}
-          <div className="grid items-stretch gap-4 lg:grid-cols-2">
+          {/* Steps — full-width 3-column horizontal row */}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {steps.map((step, index) => (
+              <div key={step.title} className="flex flex-col items-center text-center  bg-[#FFF8DC] p-8">
+                <ImageIconPlaceholder src={step.imageSrc} alt={step.title} className="mb-4 h-14 w-14 shrink-0" />
+                <div className="mb-2 text-xs uppercase tracking-[0.25em] text-[#FF8225] font-semibold">Step 0{index + 1}</div>
+                <h3 className="mb-3 text-xl font-bold font-tanker">{step.title}</h3>
+                <p className="leading-relaxed text-black/70 text-sm">{step.copy}</p>
+              </div>
+            ))}
+          </div>
 
-            {/* Steps column */}
-            <div className="flex flex-col gap-4">
-              {steps.map((step, index) => (
-                <div key={step.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                  <div className="flex items-start gap-4">
-                    <ImageIconPlaceholder src={step.imageSrc} alt={step.title} className="h-14 w-14 shrink-0" />
-                    <div>
-                      <div className="mb-2 text-xs uppercase tracking-[0.25em] text-primary/80">Step 0{index + 1}</div>
-                      <h3 className="mb-2 text-2xl font-semibold">{step.title}</h3>
-                      <p className="leading-relaxed text-black/75">{step.copy}</p>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Investor trust card */}
+          <div className="flex h-full flex-col rounded-3xl p-6 text-black">
+              <div className="mt-6 h-[28rem] md:h-[34rem] lg:h-[40rem] w-full rounded-2xl bg-white/25 p-2 md:p-3">
+                <Lottie animationData={gadgetsAnimation} loop className="h-full w-full" />
+              </div>
 
-            {/* Investor trust card column */}
-            <div className="flex h-full flex-col rounded-3xl p-6 text-black">
-              <div className="mb-3 flex items-center gap-3">
+              <div className="mt-6 mb-3 flex flex-col items-center text-center gap-3">
                 <ImageIconPlaceholder src="/Icons/trustworthiness.png" alt="Investor trust compounds faster" className="h-12 w-12 shrink-0" />
                 <h3 className="text-xl font-semibold">Investor trust compounds faster</h3>
               </div>
-              <p className="mb-4 text-black/75">
+              <p className="text-black/75 text-center">
                 Once founders have verified milestones and stronger score quality, OMISP can surface them through reports,
                 discovery feeds, watchlists, and intro workflows.
               </p>
-              <div className="inline-flex items-center gap-2 text-xl font-semibold font-tanker">
-                <ImageIconPlaceholder src="/Icons/validation.png" alt="Validation is part of the product" className="h-8 w-8 shrink-0" />
-                Validation is part of the product, not an afterthought.
-              </div>
 
-              <div className="mt-6 h-96 w-full rounded-2xl bg-white/25 p-2">
-                <Lottie animationData={gadgetsAnimation} loop className="h-full w-full" />
+              <div className="mt-6 flex flex-col items-center text-center gap-2">
+                <ImageIconPlaceholder src="/Icons/validation.png" alt="Validation is part of the product" className="h-10 w-10 shrink-0" />
+                <h3 className="text-xl font-semibold font-tanker">Validation is part of the product</h3>
+                <p className="text-black/75">Not an afterthought.</p>
               </div>
             </div>
-
-          </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-3">

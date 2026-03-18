@@ -61,7 +61,7 @@ return (
 className={cn(
 'sticky top-0 z-50 mx-auto w-full max-w-7xl border-b border-transparent md:rounded-md md:border transition-all ease-out',
 {
-'border-white/20 top-2 md:top-4 max-w-6xl shadow-lg backdrop-blur-md rounded-md': scrolled && !open,
+'border-white/20 top-2 md:top-4 max-w-[calc(100%-2rem)] md:max-w-6xl shadow-lg backdrop-blur-md rounded-2xl': scrolled && !open,
 'max-md:hidden': open,
 },
 )}
@@ -89,6 +89,23 @@ className={cn('h-14 w-auto object-contain mt-1 transition-all', scrolled ? '' : 
 OMISP
 </span>
 </Link>
+
+{/* Mobile menu toggle button */}
+<button
+  type="button"
+  className="inline-flex items-center justify-center w-10 h-10 rounded-lg md:hidden hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30 transition-colors"
+  onClick={() => setOpen(true)}
+  aria-label="Open navigation menu"
+  aria-expanded={open}
+>
+  <MenuToggleIcon
+    open={false}
+    className="w-6 h-6"
+    stroke={scrolled ? 'black' : 'white'}
+    strokeWidth={2.5}
+    duration={300}
+  />
+</button>
 
 {/* Desktop Navigation Links */}
 <div className="hidden md:flex items-center gap-6 lg:gap-8">
