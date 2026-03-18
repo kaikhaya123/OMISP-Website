@@ -41,15 +41,13 @@ const Hero = () => {
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 -top-20 bottom-0 bg-black/45  z-0" />
         
-        {/* Content Container */}
-       <div className="max-w-md mt-[35vh] ml-4 sm:ml-6 md:ml-12 lg:ml-16">
-          {/* Bottom-left positioned content */}
-          <div className="absolute bottom-5 left-4 sm:left-6 md:left-12 lg:left-16 max-w-md">
-            
+        {/* Bottom-left floating content */}
+        <div className="absolute bottom-4 left-4 z-10 w-[calc(100%-2rem)] sm:bottom-6 sm:left-6 sm:w-auto md:bottom-10 md:left-12 lg:bottom-12 lg:left-16">
+          <div className="max-w-xs sm:max-w-md">
             {/* Headline Section - Left-aligned */}
-            <div className="flex gap-4 md:gap-6 flex-col text-left w-full">
+            <div className="flex w-full flex-col gap-4 text-left md:gap-6">
               {/* Animated Title */}
-              <div className="flex gap-3 md:gap-4 flex-col w-full">
+              <div className="flex w-full flex-col gap-3 md:gap-4">
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl tracking-tighter text-left font-regular leading-[1.1]">
                   <span className="text-white">Build something</span>
                   <span className="relative flex w-full justify-start overflow-hidden text-left md:pb-4 md:pt-1">
@@ -79,15 +77,15 @@ const Hero = () => {
                   </span>
                 </h1>
 
-                <p className="text-sm md:text-base leading-relaxed text-white max-w-sm text-left mt-2" style={{ fontFamily: 'Tanker, sans-serif' }}>
+                <p className="mt-2 max-w-sm text-left text-sm leading-relaxed text-white md:text-base" style={{ fontFamily: 'Tanker, sans-serif' }}>
                   Stop guessing and start winning. OMISP transforms your raw potential into AI-validated credibility that top-tier VCs can't ignore.
                 </p>
               </div>
 
               {/* CTA */}
-              <div className="flex mt-2 w-full">
-                <Link to="/signup" className="w-full sm:w-auto">
-                  <Button size="default" className="shadow-lg shadow-primary/25 w-full sm:w-auto px-6 py-3" style={{ fontFamily: 'Tanker, sans-serif', backgroundColor: '#FF8225', color: 'black' }}>
+              <div className="mt-2 flex w-full">
+                <Link to="/signup" className="w-auto">
+                  <Button size="default" className="w-auto px-6 py-3" style={{ fontFamily: 'Tanker, sans-serif', backgroundColor: '#FF8225', color: 'black' }}>
                     Start Building Your Score
                   </Button>
                 </Link>

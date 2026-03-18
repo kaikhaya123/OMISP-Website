@@ -1,110 +1,181 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, BadgeCheck, Eye, FileCheck2, FileUp, Shield, Trophy } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import Lottie from "lottie-react";
+import gadgetsAnimation from "../../public/Lottie/Gadgets.json";
 
 const steps = [
   {
-    icon: FileUp,
+    imageSrc: "/Icons/send.png",
+    imageLabel: "Icon 01",
     title: "Log a milestone",
     copy: "Founders submit traction proof like launches, customers, revenue, team growth, and funding movement.",
   },
   {
-    icon: Eye,
+    imageSrc: "/Icons/user-setting.png",
     title: "Admin review",
     copy: "OMISP checks the evidence before the milestone influences visibility and downstream investor trust.",
   },
   {
-    icon: BadgeCheck,
+    imageSrc: "/Icons/customer-royalty.png",
+    imageLabel: "Icon 03",
     title: "Verified credibility",
     copy: "Approved milestones strengthen Progress Velocity and make founder profiles materially more investable.",
   },
 ];
 
 const differentiators = [
-  "Validated progress instead of self-claimed traction",
-  "Behavior and execution signals instead of static pitch decks",
-  "Investor discovery based on score quality, not cold outreach volume",
+  {
+    imageSrc: "/Icons/shield.png",
+    imageLabel: "Icon A",
+    copy: "Validated progress instead of self-claimed traction",
+  },
+  {
+    imageSrc: "/Icons/shield.png",
+    imageLabel: "Icon B",
+    copy: "Behavior and execution signals instead of static pitch decks",
+  },
+  {
+    imageSrc: "/Icons/shield.png",
+    imageLabel: "Icon C",
+    copy: "Investor discovery based on score quality, not cold outreach volume",
+  },
 ];
+
+const ImageIconPlaceholder = ({
+  src,
+  alt,
+  className,
+}: {
+  src: string;
+  alt: string;
+  className?: string;
+}) => {
+  const [hasError, setHasError] = useState(false);
+
+  useEffect(() => {
+    setHasError(false);
+  }, [src]);
+
+  return (
+    <div className={`flex items-center justify-center ${className ?? ""}`}>
+      <div className="flex h-full w-full items-center justify-center overflow-hidden">
+        {hasError ? (
+          <svg
+            viewBox="0 0 48 48"
+            aria-hidden="true"
+            className="h-full w-full text-black/45"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect x="7" y="9" width="34" height="30" rx="4" stroke="currentColor" strokeWidth="2" />
+            <circle cx="17" cy="19" r="3" fill="currentColor" />
+            <path d="M13 33L22 24L27 29L31 25L35 33" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        ) : (
+          <img
+            src={src}
+            alt={alt}
+            className="h-full w-full object-contain"
+            loading="lazy"
+            onError={() => setHasError(true)}
+          />
+        )}
+      </div>
+    </div>
+  );
+};
 
 const ValidationSection = () => {
   return (
-    <section className="py-24 bg-[#FFF8DC] text-white relative overflow-hidden">
+    <section className="relative overflow-hidden bg-[#FFF8DC] py-24 text-black">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,195,0,0.18),transparent_35%),radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.06),transparent_30%)]" />
-      <div className="container mx-auto px-4 md:px-6 max-w-7xl relative z-10">
-        <div className="grid lg:grid-cols-[0.95fr_1.05fr] gap-8 items-start">
-          <div>
-            <Badge className="mb-4 bg-primary text-black border-primary">Verified Milestones</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 font-tanker">
+
+      <div className="container relative z-10 mx-auto max-w-7xl px-4 md:px-6">
+        <div className="flex flex-col gap-8">
+          {/* Heading */}
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="mb-4 font-tanker text-4xl font-bold text-[#FF8225] md:text-5xl">
               Credibility is earned, reviewed, and made visible
             </h2>
-            <p className="text-black text-lg leading-relaxed mb-6">
+            <p className="mx-auto max-w-3xl text-lg leading-relaxed text-black">
               OMISP separates itself from founder communities and pitch tools by validating meaningful progress.
               That gives investors cleaner signal and gives founders a fairer path to visibility.
             </p>
+          </div>
 
-            <div className="grid sm:grid-cols-3 gap-3 mb-6">
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div className="text-3xl font-bold text-primary mb-1">3-step</div>
-                <p className="text-sm text-black">submission to approval workflow</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div className="text-3xl font-bold text-primary mb-1">70+</div>
-                <p className="text-sm text-black">score unlocks VC discovery</p>
-              </div>
-              <div className="rounded-2xl border border-white/10 bg-white/5 p-4">
-                <div className="text-3xl font-bold text-primary mb-1">Real</div>
-                <p className="text-sm text-black">proof drives ranking, not claims</p>
-              </div>
+          {/* Stats */}
+          <div className="grid grid-cols-3 gap-3">
+            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-1 text-3xl font-bold text-primary">3-step</div>
+              <p className="text-sm text-black">submission to approval workflow</p>
             </div>
+            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-1 text-3xl font-bold text-primary">70+</div>
+              <p className="text-sm text-black">score unlocks VC discovery</p>
+            </div>
+            <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-white/5 p-6">
+              <div className="mb-1 text-3xl font-bold text-primary">Real</div>
+              <p className="text-sm text-black">proof drives ranking, not claims</p>
+            </div>
+          </div>
 
-            <div className="space-y-3 mb-6">
-              {differentiators.map((item) => (
-                <div key={item} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-4">
-                  <Shield className="w-5 h-5 text-primary mt-0.5 shrink-0" />
-                  <p className="text-sm text-white/80">{item}</p>
+          {/* Differentiators — 3 columns to fill the row */}
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+            {differentiators.map((item) => (
+              <div key={item.copy} className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 p-6">
+                <ImageIconPlaceholder src={item.imageSrc} alt={item.copy} className="mt-0.5 h-10 w-10 shrink-0" />
+                <p className="text-sm text-black">{item.copy}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="flex justify-center">
+            <Button asChild className="bg-[#FF8225] text-black font-tanker hover:bg-primary/90">
+              <Link to="/capital">Explore OMISP Capital</Link>
+            </Button>
+          </div>
+
+          {/* Steps + Trust card — two-column split */}
+          <div className="grid items-stretch gap-4 lg:grid-cols-2">
+
+            {/* Steps column */}
+            <div className="flex flex-col gap-4">
+              {steps.map((step, index) => (
+                <div key={step.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                  <div className="flex items-start gap-4">
+                    <ImageIconPlaceholder src={step.imageSrc} alt={step.title} className="h-14 w-14 shrink-0" />
+                    <div>
+                      <div className="mb-2 text-xs uppercase tracking-[0.25em] text-primary/80">Step 0{index + 1}</div>
+                      <h3 className="mb-2 text-2xl font-semibold">{step.title}</h3>
+                      <p className="leading-relaxed text-black/75">{step.copy}</p>
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
 
-            <Button asChild className="bg-primary text-black hover:bg-primary/90">
-              <Link to="/capital">
-                Explore OMISP Capital
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-            </Button>
-          </div>
-
-          <div className="grid gap-4">
-            {steps.map((step, index) => (
-              <div key={step.title} className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                <div className="flex items-start gap-4">
-                  <div className="w-14 h-14 rounded-2xl bg-primary text-black flex items-center justify-center shrink-0">
-                    <step.icon className="w-6 h-6" />
-                  </div>
-                  <div>
-                    <div className="text-xs uppercase tracking-[0.25em] text-primary/80 mb-2">Step 0{index + 1}</div>
-                    <h3 className="text-2xl font-semibold mb-2">{step.title}</h3>
-                    <p className="text-white/75 leading-relaxed">{step.copy}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-
-            <div className="rounded-3xl bg-primary text-black p-6 shadow-xl">
-              <div className="flex items-center gap-3 mb-3">
-                <Trophy className="w-6 h-6" />
+            {/* Investor trust card column */}
+            <div className="flex h-full flex-col rounded-3xl p-6 text-black">
+              <div className="mb-3 flex items-center gap-3">
+                <ImageIconPlaceholder src="/Icons/trustworthiness.png" alt="Investor trust compounds faster" className="h-12 w-12 shrink-0" />
                 <h3 className="text-xl font-semibold">Investor trust compounds faster</h3>
               </div>
-              <p className="text-black/75 mb-4">
+              <p className="mb-4 text-black/75">
                 Once founders have verified milestones and stronger score quality, OMISP can surface them through reports,
                 discovery feeds, watchlists, and intro workflows.
               </p>
-              <div className="inline-flex items-center gap-2 text-sm font-semibold">
-                <FileCheck2 className="w-4 h-4" />
+              <div className="inline-flex items-center gap-2 text-xl font-semibold font-tanker">
+                <ImageIconPlaceholder src="/Icons/validation.png" alt="Validation is part of the product" className="h-8 w-8 shrink-0" />
                 Validation is part of the product, not an afterthought.
               </div>
+
+              <div className="mt-6 h-96 w-full rounded-2xl bg-white/25 p-2">
+                <Lottie animationData={gadgetsAnimation} loop className="h-full w-full" />
+              </div>
             </div>
+
           </div>
         </div>
       </div>
